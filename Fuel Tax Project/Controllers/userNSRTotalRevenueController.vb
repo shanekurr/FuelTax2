@@ -29,6 +29,7 @@ Namespace Fuel_Tax_Project
             Dim DistinctList = List.GroupBy(Function(x) x.Value).[Select](Function(y) y.First())
 
             ViewData("startDD") = DistinctList
+            ViewData("endDD") = DistinctList
 
             Return View()
         End Function
@@ -38,31 +39,118 @@ Namespace Fuel_Tax_Project
         Function Chart(ed1 As DropDownData) As ActionResult
             'This is where the code to build the chart should be
 
-            'get the radio button value
             ' Calendar = 1, State Fiscal = 2, Federal Fiscal = 3
             Dim reportType As Integer = ed1.RadioValue
 
-            Dim taxYear As Integer
-            taxYear = ed1.startDD()
+            Dim startYear, endYear As Integer
+            startYear = ed1.startDD()
+            endYear = ed1.endDD()
 
+            Dim temp1, temp2, temp3 As Double
             Dim List As New List(Of CChartData)
-            Dim valQ = (From y In db.taxcolmoney2
-                        Where y.year = taxYear
-                        Select y.CountyN, y.AmountD
-                        Order By CountyN)
+            Dim errMessage As String = ""
+            If startYear > endYear Then
+                errMessage = "Invalid input! Your start date must be before end date."
+                ViewData("errMessage") = errMessage
+            Else
 
-            '.Union(From e In db.taxcollgalls _
-            'Where e.year = taxYear
-            'Select e.CountyN)
+                Dim totalRevClark As Long = 0
+                Dim totalRevWashoe As Long = 0
+                Dim totalRevRural As Long = 0
 
-            For Each k In valQ
-                List.Add(New CChartData With {.ValueS1 = k.AmountD, .ValueString = k.CountyN})
-            Next
+                'This should include the current year months until June and include the months of July-Dec of the previous year 
+                If reportType = 2 Then
 
-            Dim DistinctList = List.GroupBy(Function(x) x.ValueString).[Select](Function(y) y.First())
+                    Dim clarkGas = (From y In db.taxcolmoney2
+                    Where y.CountyN = "Clark" AndAlso ((y.year = endYear AndAlso (y.month = "January" Or y.month = "February" Or y.month = "March" Or y.month = "April" Or y.month = "May" Or y.month = "June")) Or (y.year = startYear - 1 AndAlso (y.month = "July" Or y.month = "August" Or y.month = "September" Or y.month = "October" Or y.month = "November" Or y.month = "December")) Or (y.year >= startYear AndAlso y.year < endYear)) _
+                    Select y.AmountD, y.year)
 
-            Return View(DistinctList)
-            'Return View(List)
+                    Dim washoeGas = (From y In db.taxcolmoney2
+                    Where (y.CountyN = "Washoe" Or y.CountyN = "Carson City") AndAlso ((y.year = endYear AndAlso (y.month = "January" Or y.month = "February" Or y.month = "March" Or y.month = "April" Or y.month = "May" Or y.month = "June")) Or (y.year = startYear - 1 AndAlso (y.month = "July" Or y.month = "August" Or y.month = "September" Or y.month = "October" Or y.month = "November" Or y.month = "December")) Or (y.year >= startYear AndAlso y.year < endYear)) _
+                    Select y.AmountD, y.year)
+
+                    Dim ruralGas = (From y In db.taxcolmoney2
+                    Where (y.CountyN <> "Clark" AndAlso y.CountyN <> "Washoe" AndAlso y.CountyN <> "Carson City" AndAlso y.CountyN <> "Totals") AndAlso ((y.year = endYear AndAlso (y.month = "January" Or y.month = "February" Or y.month = "March" Or y.month = "April" Or y.month = "May" Or y.month = "June")) Or (y.year = startYear - 1 AndAlso (y.month = "July" Or y.month = "August" Or y.month = "September" Or y.month = "October" Or y.month = "November" Or y.month = "December")) Or (y.year >= startYear AndAlso y.year < endYear)) _
+                    Select y.AmountD, y.year)
+
+                    For Each l In clarkGas
+                        totalRevClark += l.AmountD
+                    Next
+                    For Each l In washoeGas
+                        totalRevWashoe += l.AmountD
+                    Next
+                    For Each l In ruralGas
+                        totalRevRural += l.AmountD
+                    Next
+
+                    'Federal Fiscal
+                ElseIf reportType = 3 Then
+
+                    Dim clarkGas = (From y In db.taxcolmoney2
+                    Where y.CountyN = "Clark" AndAlso ((y.year = endYear AndAlso (y.month = "January" Or y.month = "February" Or y.month = "March" Or y.month = "April" Or y.month = "May" Or y.month = "June" Or y.month = "July" Or y.month = "August" Or y.month = "September")) Or (y.year = startYear - 1 AndAlso (y.month = "October" Or y.month = "November" Or y.month = "December")) Or (y.year >= startYear AndAlso y.year < endYear)) _
+                    Select y.AmountD, y.year)
+
+                    Dim washoeGas = (From y In db.taxcolmoney2
+                    Where (y.CountyN = "Washoe" Or y.CountyN = "Carson City") AndAlso ((y.year = endYear AndAlso (y.month = "January" Or y.month = "February" Or y.month = "March" Or y.month = "April" Or y.month = "May" Or y.month = "June" Or y.month = "July" Or y.month = "August" Or y.month = "September")) Or (y.year = startYear - 1 AndAlso (y.month = "October" Or y.month = "November" Or y.month = "December")) Or (y.year >= startYear AndAlso y.year < endYear)) _
+                    Select y.AmountD, y.year)
+
+                    Dim ruralGas = (From y In db.taxcolmoney2
+                    Where (y.CountyN <> "Clark" AndAlso y.CountyN <> "Washoe" AndAlso y.CountyN <> "Carson City" AndAlso y.CountyN <> "Totals") AndAlso ((y.year = endYear AndAlso (y.month = "January" Or y.month = "February" Or y.month = "March" Or y.month = "April" Or y.month = "May" Or y.month = "June" Or y.month = "July" Or y.month = "August" Or y.month = "September")) Or (y.year = startYear - 1 AndAlso (y.month = "October" Or y.month = "November" Or y.month = "December")) Or (y.year >= startYear AndAlso y.year < endYear)) _
+                    Select y.AmountD, y.year)
+
+                    For Each l In clarkGas
+                        totalRevClark += l.AmountD
+                    Next
+                    For Each l In washoeGas
+                        totalRevWashoe += l.AmountD
+                    Next
+                    For Each l In ruralGas
+                        totalRevRural += l.AmountD
+                    Next
+
+                    'This is Calendar year reportType = 1 
+                Else
+
+                    Dim clarkGas = (From y In db.taxcolmoney2
+                    Where y.CountyN = "Clark" AndAlso (y.year >= startYear AndAlso y.year <= endYear) _
+                    Select y.AmountD, y.year)
+
+                    Dim washoeGas = (From y In db.taxcolmoney2
+                    Where (y.CountyN = "Washoe" Or y.CountyN = "Carson City") AndAlso (y.year >= startYear AndAlso y.year <= endYear) _
+                    Select y.AmountD, y.year)
+
+                    Dim ruralGas = (From y In db.taxcolmoney2
+                    Where (y.CountyN <> "Clark" AndAlso y.CountyN <> "Washoe" AndAlso y.CountyN <> "Carson City" AndAlso y.CountyN <> "Totals") AndAlso (y.year >= startYear AndAlso y.year <= endYear) _
+                    Select y.AmountD, y.year)
+
+                    For Each l In clarkGas
+                        totalRevClark += l.AmountD
+                    Next
+                    For Each l In washoeGas
+                        totalRevWashoe += l.AmountD
+                    Next
+                    For Each l In ruralGas
+                        totalRevRural += l.AmountD
+                    Next
+
+                End If
+
+                temp1 = (totalRevClark / (totalRevClark + totalRevWashoe + totalRevRural))
+                temp2 = (totalRevWashoe / (totalRevClark + totalRevWashoe + totalRevRural))
+                temp3 = (totalRevRural / (totalRevClark + totalRevWashoe + totalRevRural))
+
+                List.Add(New CChartData With {.ValueString = "Clark", .ValueLong = totalRevClark, .ValueDbl = temp1 * 100})
+                List.Add(New CChartData With {.ValueString = "Washoe/Carson City", .ValueLong = totalRevWashoe, .ValueDbl = temp2 * 100})
+                List.Add(New CChartData With {.ValueString = "Rural", .ValueLong = totalRevRural, .ValueDbl = temp3 * 100})
+                ViewData("perCla") = temp1
+                ViewData("perWas") = temp2
+                ViewData("perRur") = temp3
+
+            End If
+
+
+
+            Return View(List)
         End Function
 
 

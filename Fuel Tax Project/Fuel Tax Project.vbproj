@@ -206,6 +206,10 @@
     <Compile Include="Controllers\userGasolinebycouController.vb" />
     <Compile Include="Controllers\usergasrevperyearController.vb" />
     <Compile Include="Controllers\userLinearRegressionController.vb" />
+    <Compile Include="Controllers\userNSRGasolineController.vb" />
+    <Compile Include="Controllers\userNSRSpecialFuelsController.vb" />
+    <Compile Include="Controllers\userNSRTotalPercentagesPerYearController.vb" />
+    <Compile Include="Controllers\userNSRTotalRevenueController.vb" />
     <Compile Include="Controllers\userSFGallonsPerYearController.vb" />
     <Compile Include="Controllers\userSFRevPerYearController.vb" />
     <Compile Include="Controllers\userSpecFuelsByCouController.vb" />
@@ -495,6 +499,14 @@
     <Content Include="Views\userTotalGallonsByCounty\Chart3.vbhtml" />
     <Content Include="Views\userLinearRegression\Chart.vbhtml" />
     <Content Include="Views\userLinearRegression\Index.vbhtml" />
+    <Content Include="Views\userNSRGasoline\Chart.vbhtml" />
+    <Content Include="Views\userNSRGasoline\Index.vbhtml" />
+    <Content Include="Views\userNSRSpecialFuels\Chart.vbhtml" />
+    <Content Include="Views\userNSRSpecialFuels\Index.vbhtml" />
+    <Content Include="Views\userNSRTotalPercentagesPerYear\Chart.vbhtml" />
+    <Content Include="Views\userNSRTotalPercentagesPerYear\Index.vbhtml" />
+    <Content Include="Views\userNSRTotalRevenue\Chart.vbhtml" />
+    <Content Include="Views\userNSRTotalRevenue\Index.vbhtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-responsive.css" />

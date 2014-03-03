@@ -1,18 +1,18 @@
 ﻿@ModelType IEnumerable(Of Fuel_Tax_Project.CChartData)
 
 @Code
-    ViewData("Title") = "North, South, Rural Total Gallons"
+    ViewData("Title") = "North, South, Rural Total Fuel Percentages"
 End Code
 
-<h2>North, South, Rural Total Gallons</h2>
-
+<h2>North, South, Rural Total Fuel Percentages</h2>
+<div class="field-validation-error">@ViewData("errMessage")</div>
 <div class="row-fluid">
     <div class="span8">
-        <div id="chart1" style="width:100%; height:33%"></div>
+        <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
     </div> <!-- end span8 -->
     <div class="span3">
         <!-- This is where the table will be -->
-        <table class="table">
+        <table class="table" id="datatable">
             <tr>
                 <th>
                     County
@@ -20,7 +20,9 @@ End Code
                 <th>
                     Gallons
                 </th>
-                <th></th>
+                <th>
+                    Percentages
+                </th>
             </tr>
             @For Each item As CChartData In Model
                 @<tr>
@@ -28,114 +30,99 @@ End Code
                         @Html.DisplayFor(Function(modelItem) item.ValueString)
                     </td>
                     <td>
-                        @Html.DisplayFor(Function(modelItem) item.ValueS1)
-                    </td>
 
+                        @Html.DisplayFor(Function(modelItem) item.ValueLong)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(Function(modelItem) item.ValueDbl)
+
+                    </td>
                 </tr>
             Next
 
         </table>
     </div><!-- end span3 -->
 </div> <!-- End row-fluid -->
+
+
+<div id="container" style="min-width: 40%; height: 40%; margin: 0 auto"></div>
+
 <script class="code" type="text/javascript">
+    $(function () {
+        var chart;
 
 
-    $(document).ready(function () {
-        var s2 = [
+        pie_values = [['Clark', @ViewData("perCla")], ['Washoe/Carson City',  @ViewData("perWas")], ['Rural', @ViewData("perRur")]];
 
-            @For Each v As CChartData  In Model
-                @String.Format("[{0}, {1}], ", v.year, v.ValueS1)
-            Next
-        ];
+        $(document).ready(function () {
 
-        var s1 = [];
+            // Build the chart
+            $('#container').highcharts({
 
-        plot1 = $.jqplot("chart1", [s2, s1], {
-            // Turns on animation for all series in this plot.
-            animate: true,
-            // Will animate plot on calls to plot1.replot({resetAxes:true})
-            animateReplot: true,
-            cursor: {
-                show: true,
-                zoom: true,
-                looseZoom: true,
-                showTooltip: false
-            },
-            series: [
-                {
-                    pointLabels: {
-                        show: false
-                    },
-                    renderer: $.jqplot.BarRenderer,
-                    showHighlight: true,
-yaxis:          'yaxis',
-                    rendererOptions: {
-                        // Speed up the animation a little bit.
-                        // This is a number of milliseconds.
-                        // Default for bar series is 3000.
-                        animation: {
-                            speed: 2500
+                chart: {
+                    plotBackgroundColor: null,
+                    plotBorderWidth: null,
+                    plotShadow: false
+                },
+                title: {
+                    text: 'North, South Rural Total Fuel Percentages'
+                },
+                tooltip: {
+                    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                },
+                plotOptions: {
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        dataLabels: {
+                            enabled: true
                         },
-                        barWidth: 15,
-                        barPadding: -15,
-                        barMargin: 10,
-                        highlightMouseOver: false
+                        showInLegend: true
                     }
                 },
-                {
-                    rendererOptions: {
-                        // speed up the animation a little bit.
-                        // This is a number of milliseconds.
-                        // Default for a line series is 2500.
-                        animation: {
-                            speed: 2000
-                        }
-                    }
-                }
-            ],
-            axesDefaults: {
-                pad: 0
-            },
-            axes: {
-                // These options will set up the x axis like a category axis.
-                xaxis: {
-                    tickInterval: 1,
-                    drawMajorGridlines: false,
-                    drawMinorGridlines: true,
-                    drawMajorTickMarks: false,
-                    rendererOptions: {
-                        tickInset: 0.5,
-                        minorTicks: 1
-                    }
-                },
-                yaxis: {
-                    tickOptions: {
-                        formatString: "$%'d"
-                    },
-                    rendererOptions: {
-                        forceTickAt0: true
-                    }
-                },
-                y2axis: {
-                    tickOptions: {
-                        formatString: "$%'d"
-                    },
-                    rendererOptions: {
-                        // align the ticks on the y2 axis with the y axis.
-                        alignTicks: true,
-                        forceTickAt0: true
-                    }
-                }
-            },
-            highlighter: {
-                show: true,
-                showLabel: true,
-tooltipAxes:    'y',
-                sizeAdjust: 7.5, tooltipLocation: 'ne'
-            }
+                series: [{
+                    type: 'pie',
+                    name: 'Region share',
+                    data: pie_values
+
+                }]
+            });
         });
 
     });
-
-
 </script>
+
+<br>
+<div id="container1" style="min-width: 100%; height: 60%; margin: 0 auto"></div>
+<script class="code" type="text/javascript">
+
+    $(function () {
+        $('#container1').highcharts({
+            data: {
+                table: document.getElementById('datatable')
+            },
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: 'North, South, Rural Total Fuel Percentages'
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Total (Gallons)',
+                    align: 'high'
+                },
+                labels: {
+                    formatter: function () {
+                        return Highcharts.numberFormat(this.value / 1000000, 0) + 'M ';
+                    }
+                },
+            },
+            tooltip: {
+                valuePrefix: ""
+            },
+        })
+    })
+</script>
+

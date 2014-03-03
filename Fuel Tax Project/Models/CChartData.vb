@@ -12,6 +12,8 @@ Public Class CChartData
     Public Property size As Integer
     Public Property newVal As Double
     Public Property oldVal As Nullable(Of Double)
+    Public Property ValueDbl As Double
+    Public Property ValueLong As Long
 
 End Class
 

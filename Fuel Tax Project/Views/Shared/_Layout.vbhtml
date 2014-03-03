@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - NDOT</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
@@ -63,11 +63,11 @@
                             <li class="dropdown">
                                 <a href="#" data-toggle="dropdown" id="dropdownMenu3" class="dropdown-toggle">North, South, Rural Percentages</a>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu3">
-                                    <li>@Html.ActionLink("Total Gallons", "PercentagesTG", "Home")</li>
-                                    <li>@Html.ActionLink("Gasoline", "PercentagesG", "Home")</li>
-                                    <li>@Html.ActionLink("Special Fuels", "PercentagesS", "Home")</li>
+                                    <li>@Html.ActionLink("Total Gallons", "Index", "userNSRTotalPercentagesPerYear")</li>
+                                    <li>@Html.ActionLink("Gasoline", "Index", "userNSRGasoline")</li>
+                                    <li>@Html.ActionLink("Special Fuels", "Index", "userNSRSpecialFuels")</li>
                                     <li class="divider"></li>
-                                    <li>@Html.ActionLink("Total Revenue", "PercentagesTR", "Home")</li>
+                                    <li>@Html.ActionLink("Total Revenue", "Index", "userNSRTotalRevenue")</li>
                                 </ul>
                             </li>
                             <li>@Html.ActionLink("Historical Data", "HistoricalData", "Home")</li>
