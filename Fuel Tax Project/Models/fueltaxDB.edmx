@@ -1,0 +1,505 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="fueltaxModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'C:\USERS\O'KEEFE\DOCUMENTS\VISUAL STUDIO 2013\PROJECTS\FUEL TAX PROJECT\FUEL TAX PROJECT\APP_DATA\FUELTAX.MDF.dbo.accessrights' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="accessrights">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="userrights" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="userrights" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="gasolinegbycou">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="year" Type="int" Nullable="false" />
+          <Property Name="month" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="CountyN" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Gallon" Type="int" Nullable="false" />
+          <Property Name="perTotal" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="gasrevperyear">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="year" Type="int" Nullable="false" />
+          <Property Name="amount" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="gasrevperyearscen1">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="year" Type="int" Nullable="false" />
+          <Property Name="amount" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="gasrevperyearscen2">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="year" Type="int" Nullable="false" />
+          <Property Name="amount" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="gasrevperyearscen3">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="year" Type="int" Nullable="false" />
+          <Property Name="amount" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="gasrevperyearscen4">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="year" Type="int" Nullable="false" />
+          <Property Name="amount" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="gasrevperyearscen5">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="year" Type="int" Nullable="false" />
+          <Property Name="amount" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="gasrevtohwyfnd">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="year" Type="int" Nullable="false" />
+          <Property Name="month" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="amount" Type="int" Nullable="false" />
+          <Property Name="total" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="gasvsgasohole">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="year" Type="int" Nullable="false" />
+          <Property Name="gasoline" Type="int" Nullable="false" />
+          <Property Name="gasohole" Type="int" Nullable="false" />
+          <Property Name="total" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="mcspefuel">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="year" Type="int" Nullable="false" />
+          <Property Name="amount" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="news">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Titre" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="contenu" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="taxcollgall">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="year" Type="int" Nullable="false" />
+          <Property Name="month" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="CountyN" Type="char" MaxLength="30" Nullable="false" />
+          <Property Name="Diesel" Type="int" Nullable="false" />
+          <Property Name="CNG" Type="int" Nullable="false" />
+          <Property Name="LPG" Type="int" Nullable="false" />
+          <Property Name="A55" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="taxcolmoney">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="CountyN" Type="char" MaxLength="30" Nullable="false" />
+          <Property Name="AmountD" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="taxcolmoney2">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="year" Type="int" Nullable="false" />
+          <Property Name="month" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="CountyN" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="AmountD" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="fueltaxModelStoreContainer">
+          <EntitySet Name="gasolinegbycou" EntityType="Self.gasolinegbycou" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gasrevperyear" EntityType="Self.gasrevperyear" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gasrevperyearscen1" EntityType="Self.gasrevperyearscen1" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gasrevperyearscen2" EntityType="Self.gasrevperyearscen2" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gasrevperyearscen3" EntityType="Self.gasrevperyearscen3" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gasrevperyearscen4" EntityType="Self.gasrevperyearscen4" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gasrevperyearscen5" EntityType="Self.gasrevperyearscen5" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gasrevtohwyfnd" EntityType="Self.gasrevtohwyfnd" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gasvsgasohole" EntityType="Self.gasvsgasohole" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="mcspefuel" EntityType="Self.mcspefuel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="news" EntityType="Self.news" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="taxcollgall" EntityType="Self.taxcollgall" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="taxcolmoney" EntityType="Self.taxcolmoney" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="taxcolmoney2" EntityType="Self.taxcolmoney2" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="accessrights" EntityType="Self.accessrights" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [accessrights].[id] AS [id], 
+    [accessrights].[name] AS [name], 
+    [accessrights].[userrights] AS [userrights]
+    FROM [dbo].[accessrights] AS [accessrights]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="fueltaxModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="gasolinegbycou">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="year" Type="Int32" Nullable="false" />
+          <Property Name="month" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CountyN" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Gallon" Type="Int32" Nullable="false" />
+          <Property Name="perTotal" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="gasrevperyear">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="year" Type="Int32" Nullable="false" />
+          <Property Name="amount" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="gasrevperyearscen1">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="year" Type="Int32" Nullable="false" />
+          <Property Name="amount" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="gasrevperyearscen2">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="year" Type="Int32" Nullable="false" />
+          <Property Name="amount" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="gasrevperyearscen3">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="year" Type="Int32" Nullable="false" />
+          <Property Name="amount" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="gasrevperyearscen4">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="year" Type="Int32" Nullable="false" />
+          <Property Name="amount" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="gasrevperyearscen5">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="year" Type="Int32" Nullable="false" />
+          <Property Name="amount" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="gasrevtohwyfnd">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="year" Type="Int32" Nullable="false" />
+          <Property Name="month" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="amount" Type="Int32" Nullable="false" />
+          <Property Name="total" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="gasvsgasohole">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="year" Type="Int32" Nullable="false" />
+          <Property Name="gasoline" Type="Int32" Nullable="false" />
+          <Property Name="gasohole" Type="Int32" Nullable="false" />
+          <Property Name="total" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="mcspefuel">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="year" Type="Int32" Nullable="false" />
+          <Property Name="amount" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="news">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Titre" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="contenu" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="taxcollgall">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="year" Type="Int32" Nullable="false" />
+          <Property Name="month" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CountyN" Type="String" MaxLength="30" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Diesel" Type="Int32" Nullable="false" />
+          <Property Name="CNG" Type="Int32" Nullable="false" />
+          <Property Name="LPG" Type="Int32" Nullable="false" />
+          <Property Name="A55" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="taxcolmoney">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="CountyN" Type="String" MaxLength="30" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="AmountD" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="taxcolmoney2">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="year" Type="Int32" Nullable="false" />
+          <Property Name="month" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CountyN" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AmountD" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="accessright">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="userrights" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="userrights" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="fueltaxEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="gasolinegbycous" EntityType="Self.gasolinegbycou" />
+          <EntitySet Name="gasrevperyears" EntityType="Self.gasrevperyear" />
+          <EntitySet Name="gasrevperyearscen1" EntityType="Self.gasrevperyearscen1" />
+          <EntitySet Name="gasrevperyearscen2" EntityType="Self.gasrevperyearscen2" />
+          <EntitySet Name="gasrevperyearscen3" EntityType="Self.gasrevperyearscen3" />
+          <EntitySet Name="gasrevperyearscen4" EntityType="Self.gasrevperyearscen4" />
+          <EntitySet Name="gasrevperyearscen5" EntityType="Self.gasrevperyearscen5" />
+          <EntitySet Name="gasrevtohwyfnds" EntityType="Self.gasrevtohwyfnd" />
+          <EntitySet Name="gasvsgasoholes" EntityType="Self.gasvsgasohole" />
+          <EntitySet Name="mcspefuels" EntityType="Self.mcspefuel" />
+          <EntitySet Name="news" EntityType="Self.news" />
+          <EntitySet Name="taxcollgalls" EntityType="Self.taxcollgall" />
+          <EntitySet Name="taxcolmoneys" EntityType="Self.taxcolmoney" />
+          <EntitySet Name="taxcolmoney2" EntityType="Self.taxcolmoney2" />
+          <EntitySet Name="accessrights" EntityType="Self.accessright" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="fueltaxModelStoreContainer" CdmEntityContainer="fueltaxEntities">
+          <EntitySetMapping Name="gasolinegbycous">
+            <EntityTypeMapping TypeName="fueltaxModel.gasolinegbycou">
+              <MappingFragment StoreEntitySet="gasolinegbycou">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="year" ColumnName="year" />
+                <ScalarProperty Name="month" ColumnName="month" />
+                <ScalarProperty Name="CountyN" ColumnName="CountyN" />
+                <ScalarProperty Name="Gallon" ColumnName="Gallon" />
+                <ScalarProperty Name="perTotal" ColumnName="perTotal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gasrevperyears">
+            <EntityTypeMapping TypeName="fueltaxModel.gasrevperyear">
+              <MappingFragment StoreEntitySet="gasrevperyear">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="year" ColumnName="year" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gasrevperyearscen1">
+            <EntityTypeMapping TypeName="fueltaxModel.gasrevperyearscen1">
+              <MappingFragment StoreEntitySet="gasrevperyearscen1">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="year" ColumnName="year" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gasrevperyearscen2">
+            <EntityTypeMapping TypeName="fueltaxModel.gasrevperyearscen2">
+              <MappingFragment StoreEntitySet="gasrevperyearscen2">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="year" ColumnName="year" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gasrevperyearscen3">
+            <EntityTypeMapping TypeName="fueltaxModel.gasrevperyearscen3">
+              <MappingFragment StoreEntitySet="gasrevperyearscen3">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="year" ColumnName="year" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gasrevperyearscen4">
+            <EntityTypeMapping TypeName="fueltaxModel.gasrevperyearscen4">
+              <MappingFragment StoreEntitySet="gasrevperyearscen4">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="year" ColumnName="year" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gasrevperyearscen5">
+            <EntityTypeMapping TypeName="fueltaxModel.gasrevperyearscen5">
+              <MappingFragment StoreEntitySet="gasrevperyearscen5">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="year" ColumnName="year" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gasrevtohwyfnds">
+            <EntityTypeMapping TypeName="fueltaxModel.gasrevtohwyfnd">
+              <MappingFragment StoreEntitySet="gasrevtohwyfnd">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="year" ColumnName="year" />
+                <ScalarProperty Name="month" ColumnName="month" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="total" ColumnName="total" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gasvsgasoholes">
+            <EntityTypeMapping TypeName="fueltaxModel.gasvsgasohole">
+              <MappingFragment StoreEntitySet="gasvsgasohole">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="year" ColumnName="year" />
+                <ScalarProperty Name="gasoline" ColumnName="gasoline" />
+                <ScalarProperty Name="gasohole" ColumnName="gasohole" />
+                <ScalarProperty Name="total" ColumnName="total" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="mcspefuels">
+            <EntityTypeMapping TypeName="fueltaxModel.mcspefuel">
+              <MappingFragment StoreEntitySet="mcspefuel">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="year" ColumnName="year" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="news">
+            <EntityTypeMapping TypeName="fueltaxModel.news">
+              <MappingFragment StoreEntitySet="news">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Titre" ColumnName="Titre" />
+                <ScalarProperty Name="contenu" ColumnName="contenu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="taxcollgalls">
+            <EntityTypeMapping TypeName="fueltaxModel.taxcollgall">
+              <MappingFragment StoreEntitySet="taxcollgall">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="year" ColumnName="year" />
+                <ScalarProperty Name="month" ColumnName="month" />
+                <ScalarProperty Name="CountyN" ColumnName="CountyN" />
+                <ScalarProperty Name="Diesel" ColumnName="Diesel" />
+                <ScalarProperty Name="CNG" ColumnName="CNG" />
+                <ScalarProperty Name="LPG" ColumnName="LPG" />
+                <ScalarProperty Name="A55" ColumnName="A55" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="taxcolmoneys">
+            <EntityTypeMapping TypeName="fueltaxModel.taxcolmoney">
+              <MappingFragment StoreEntitySet="taxcolmoney">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CountyN" ColumnName="CountyN" />
+                <ScalarProperty Name="AmountD" ColumnName="AmountD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="taxcolmoney2">
+            <EntityTypeMapping TypeName="fueltaxModel.taxcolmoney2">
+              <MappingFragment StoreEntitySet="taxcolmoney2">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="year" ColumnName="year" />
+                <ScalarProperty Name="month" ColumnName="month" />
+                <ScalarProperty Name="CountyN" ColumnName="CountyN" />
+                <ScalarProperty Name="AmountD" ColumnName="AmountD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="accessrights">
+            <EntityTypeMapping TypeName="fueltaxModel.accessright">
+              <MappingFragment StoreEntitySet="accessrights">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="userrights" ColumnName="userrights" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

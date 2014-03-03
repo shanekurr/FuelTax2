@@ -1,0 +1,573 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{896AA046-F116-4C2D-A2FB-E033BBEBDB0A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Fuel_Tax_Project</RootNamespace>
+    <AssemblyName>Fuel Tax Project</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>Fuel Tax Project.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>Fuel Tax Project.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.0.0-rc1\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.0.0-rc1\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0-rc1\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0-rc1\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0-rc1\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.3.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.3.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.0.0-rc1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.0-rc1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.1.0.0-rc1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.1.0.0-rc1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.1.0.0-rc1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.2.0.0-rc1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.2.0.0-rc1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.2.0.0-rc1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.2.0.0-rc1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.2.0.0-rc1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.2.0.0-rc1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.2.0.0-rc1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.2.0.0-rc1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.2.0.0-rc1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.Mvc" />
+    <Import Include="System.Web.Mvc.Ajax" />
+    <Import Include="System.Web.Mvc.Html" />
+    <Import Include="System.Web.Routing" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.vb" />
+    <Compile Include="App_Start\FilterConfig.vb" />
+    <Compile Include="App_Start\RouteConfig.vb" />
+    <Compile Include="App_Start\Startup.Auth.vb" />
+    <Compile Include="Controllers\AccountController.vb" />
+    <Compile Include="Controllers\gasolinegbycouController.vb" />
+    <Compile Include="Controllers\gasrevperyearscen5Controller.vb" />
+    <Compile Include="Controllers\gasrevperyearController.vb" />
+    <Compile Include="Controllers\gasrevperyearscen1Controller.vb" />
+    <Compile Include="Controllers\gasrevperyearscen2Controller.vb" />
+    <Compile Include="Controllers\gasrevperyearscen3Controller.vb" />
+    <Compile Include="Controllers\gasrevperyearscen4Controller.vb" />
+    <Compile Include="Controllers\gasrevtohwyfndController.vb" />
+    <Compile Include="Controllers\gasvsgasoholeController.vb" />
+    <Compile Include="Controllers\mcspefuelController.vb" />
+    <Compile Include="Controllers\newsController.vb" />
+    <Compile Include="Controllers\NSandRuralTotRevController.vb" />
+    <Compile Include="Controllers\taxcollgallController.vb" />
+    <Compile Include="Controllers\taxcolmoney2Controller.vb" />
+    <Compile Include="Controllers\taxcolmoneyController.vb" />
+    <Compile Include="Controllers\userGasGallonsPerYearController.vb" />
+    <Compile Include="Controllers\userGasolinebycouController.vb" />
+    <Compile Include="Controllers\usergasrevperyearController.vb" />
+    <Compile Include="Controllers\userLinearRegressionController.vb" />
+    <Compile Include="Controllers\userSFGallonsPerYearController.vb" />
+    <Compile Include="Controllers\userSFRevPerYearController.vb" />
+    <Compile Include="Controllers\userSpecFuelsByCouController.vb" />
+    <Compile Include="Controllers\userTotalGallonsByCountyController.vb" />
+    <Compile Include="Controllers\userTotalGallonsPerYearController.vb" />
+    <Compile Include="Controllers\userTotalTaxByCountyController.vb" />
+    <Compile Include="Controllers\userTotalTaxRevPerYearController.vb" />
+    <Compile Include="Global.asax.vb">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\accessright.vb">
+      <DependentUpon>fueltaxDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountViewModels.vb" />
+    <Compile Include="Models\CChartData.vb" />
+    <Compile Include="Models\fueltaxDB.Context.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>fueltaxDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fueltaxDB.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>fueltaxDB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fueltaxDB.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>fueltaxDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\gasolinegbycou.vb">
+      <DependentUpon>fueltaxDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\gasrevperyear.vb">
+      <DependentUpon>fueltaxDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\gasrevperyearscen1.vb">
+      <DependentUpon>fueltaxDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\gasrevperyearscen2.vb">
+      <DependentUpon>fueltaxDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\gasrevperyearscen3.vb">
+      <DependentUpon>fueltaxDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\gasrevperyearscen4.vb">
+      <DependentUpon>fueltaxDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\gasrevperyearscen5.vb">
+      <DependentUpon>fueltaxDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\gasrevtohwyfnd.vb">
+      <DependentUpon>fueltaxDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\gasvsgasohole.vb">
+      <DependentUpon>fueltaxDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IdentityModels.vb" />
+    <Compile Include="Models\mcspefuel.vb">
+      <DependentUpon>fueltaxDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\news.vb">
+      <DependentUpon>fueltaxDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\taxcollgall.vb">
+      <DependentUpon>fueltaxDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\taxcolmoney.vb">
+      <DependentUpon>fueltaxDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\taxcolmoney2.vb">
+      <DependentUpon>fueltaxDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Controllers\HomeController.vb" />
+    <Compile Include="Startup.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Models\fueltaxDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>fueltaxDB.Designer.vb</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Content\excelexport\jquery-2.0.1.min.js" />
+    <Content Include="Content\excelexport\jquery.base64.js" />
+    <Content Include="Content\excelexport\jquery.btechco.excelexport.js" />
+    <Content Include="Content\excelexport\jquery.btechco.excelexport.min.js" />
+    <None Include="Content\excelexport\_references.js" />
+    <Content Include="Content\highcharts\data.js" />
+    <Content Include="Content\highcharts\export-csv.js" />
+    <Content Include="Content\highcharts\exporting.js" />
+    <Content Include="Content\highcharts\highcharts-convert.js" />
+    <Content Include="Content\highcharts\highcharts-more.js" />
+    <Content Include="Content\highcharts\highcharts.js" />
+    <Content Include="Content\jplot\jqplot.barRenderer.js" />
+    <Content Include="Content\jplot\jqplot.barRenderer.min.js" />
+    <Content Include="Content\jplot\jqplot.cursor.js" />
+    <Content Include="Content\jplot\jqplot.cursor.min.js" />
+    <Content Include="Content\jplot\jqplot.highlighter.js" />
+    <Content Include="Content\jplot\jqplot.highlighter.min.js" />
+    <Content Include="Content\jplot\jqplot.pointLabels.js" />
+    <Content Include="Content\jplot\jqplot.pointLabels.min.js" />
+    <Content Include="Content\jplot\jquery.jqplot.css" />
+    <Content Include="Content\jplot\jquery.jqplot.js" />
+    <Content Include="Content\jplot\jquery.jqplot.min.css" />
+    <Content Include="Content\jplot\jquery.jqplot.min.js" />
+    <Content Include="Models\fueltaxDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>fueltaxDB.edmx</DependentUpon>
+      <LastGenOutput>fueltaxDB.Context.vb</LastGenOutput>
+    </Content>
+    <Content Include="Models\fueltaxDB.edmx.diagram">
+      <DependentUpon>fueltaxDB.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\fueltaxDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>fueltaxDB.edmx</DependentUpon>
+      <LastGenOutput>fueltaxDB.vb</LastGenOutput>
+    </Content>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="App_Data\fueltax.mdf" />
+    <Content Include="App_Data\fueltax_log.ldf">
+      <DependentUpon>fueltax.mdf</DependentUpon>
+    </Content>
+    <Content Include="packages.config" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Views\Account\_ChangePasswordPartial.vbhtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.vbhtml" />
+    <Content Include="Views\Account\_RemoveAccountPartial.vbhtml" />
+    <Content Include="Views\Account\_SetPasswordPartial.vbhtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.vbhtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.vbhtml" />
+    <Content Include="Views\Account\Login.vbhtml" />
+    <Content Include="Views\Account\Manage.vbhtml" />
+    <Content Include="Views\Account\Register.vbhtml" />
+    <Content Include="Views\Shared\_LoginPartial.vbhtml" />
+    <Content Include="Views\Home\StateTotalG.vbhtml" />
+    <Content Include="Views\Home\StateGasolineG.vbhtml" />
+    <Content Include="Views\Home\StateSpecialG.vbhtml" />
+    <Content Include="Views\Home\StateTotalR.vbhtml" />
+    <Content Include="Views\Home\StateGasolineR.vbhtml" />
+    <Content Include="Views\Home\StateSpecialR.vbhtml" />
+    <Content Include="Views\Home\CountyTotalG.vbhtml" />
+    <Content Include="Views\Home\CountyGasolineG.vbhtml" />
+    <Content Include="Views\Home\CountySpecialG.vbhtml" />
+    <Content Include="Views\Home\CountyTotalT.vbhtml" />
+    <Content Include="Views\Home\PercentagesTG.vbhtml" />
+    <Content Include="Views\Home\PercentagesG.vbhtml" />
+    <Content Include="Views\Home\PercentagesS.vbhtml" />
+    <Content Include="Views\Home\PercentagesTR.vbhtml" />
+    <Content Include="Views\Home\HistoricalData.vbhtml" />
+    <Content Include="Views\Home\LinearRegression.vbhtml" />
+    <Content Include="Views\Home\CustomScenarios.vbhtml" />
+    <Content Include="Views\gasrevperyear\Create.vbhtml" />
+    <Content Include="Views\gasrevperyear\Delete.vbhtml" />
+    <Content Include="Views\gasrevperyear\Details.vbhtml" />
+    <Content Include="Views\gasrevperyear\Edit.vbhtml" />
+    <Content Include="Views\gasrevperyear\Index.vbhtml" />
+    <Content Include="Views\gasolinegbycou\Create.vbhtml" />
+    <Content Include="Views\gasolinegbycou\Delete.vbhtml" />
+    <Content Include="Views\gasolinegbycou\Details.vbhtml" />
+    <Content Include="Views\gasolinegbycou\Edit.vbhtml" />
+    <Content Include="Views\gasolinegbycou\Index.vbhtml" />
+    <Content Include="Views\gasrevperyearscen1\Create.vbhtml" />
+    <Content Include="Views\gasrevperyearscen1\Delete.vbhtml" />
+    <Content Include="Views\gasrevperyearscen1\Details.vbhtml" />
+    <Content Include="Views\gasrevperyearscen1\Edit.vbhtml" />
+    <Content Include="Views\gasrevperyearscen1\Index.vbhtml" />
+    <Content Include="Views\gasrevperyearscen2\Create.vbhtml" />
+    <Content Include="Views\gasrevperyearscen2\Delete.vbhtml" />
+    <Content Include="Views\gasrevperyearscen2\Details.vbhtml" />
+    <Content Include="Views\gasrevperyearscen2\Edit.vbhtml" />
+    <Content Include="Views\gasrevperyearscen2\Index.vbhtml" />
+    <Content Include="Views\gasrevperyearscen3\Create.vbhtml" />
+    <Content Include="Views\gasrevperyearscen3\Delete.vbhtml" />
+    <Content Include="Views\gasrevperyearscen3\Details.vbhtml" />
+    <Content Include="Views\gasrevperyearscen3\Edit.vbhtml" />
+    <Content Include="Views\gasrevperyearscen3\Index.vbhtml" />
+    <Content Include="Views\gasrevperyearscen4\Create.vbhtml" />
+    <Content Include="Views\gasrevperyearscen4\Delete.vbhtml" />
+    <Content Include="Views\gasrevperyearscen4\Details.vbhtml" />
+    <Content Include="Views\gasrevperyearscen4\Edit.vbhtml" />
+    <Content Include="Views\gasrevperyearscen4\Index.vbhtml" />
+    <Content Include="Views\gasrevperyearscen5\Create.vbhtml" />
+    <Content Include="Views\gasrevperyearscen5\Delete.vbhtml" />
+    <Content Include="Views\gasrevperyearscen5\Details.vbhtml" />
+    <Content Include="Views\gasrevperyearscen5\Edit.vbhtml" />
+    <Content Include="Views\gasrevperyearscen5\Index.vbhtml" />
+    <Content Include="Views\gasrevtohwyfnd\Create.vbhtml" />
+    <Content Include="Views\gasrevtohwyfnd\Delete.vbhtml" />
+    <Content Include="Views\gasrevtohwyfnd\Details.vbhtml" />
+    <Content Include="Views\gasrevtohwyfnd\Edit.vbhtml" />
+    <Content Include="Views\gasrevtohwyfnd\Index.vbhtml" />
+    <Content Include="Views\gasvsgasohole\Create.vbhtml" />
+    <Content Include="Views\gasvsgasohole\Delete.vbhtml" />
+    <Content Include="Views\gasvsgasohole\Details.vbhtml" />
+    <Content Include="Views\gasvsgasohole\Edit.vbhtml" />
+    <Content Include="Views\gasvsgasohole\Index.vbhtml" />
+    <Content Include="Views\mcspefuel\Create.vbhtml" />
+    <Content Include="Views\mcspefuel\Delete.vbhtml" />
+    <Content Include="Views\mcspefuel\Details.vbhtml" />
+    <Content Include="Views\mcspefuel\Edit.vbhtml" />
+    <Content Include="Views\mcspefuel\Index.vbhtml" />
+    <Content Include="Views\news\Create.vbhtml" />
+    <Content Include="Views\news\Delete.vbhtml" />
+    <Content Include="Views\news\Details.vbhtml" />
+    <Content Include="Views\news\Edit.vbhtml" />
+    <Content Include="Views\news\Index.vbhtml" />
+    <Content Include="Views\taxcollgall\Create.vbhtml" />
+    <Content Include="Views\taxcollgall\Delete.vbhtml" />
+    <Content Include="Views\taxcollgall\Details.vbhtml" />
+    <Content Include="Views\taxcollgall\Edit.vbhtml" />
+    <Content Include="Views\taxcollgall\Index.vbhtml" />
+    <Content Include="Views\taxcolmoney\Create.vbhtml" />
+    <Content Include="Views\taxcolmoney\Delete.vbhtml" />
+    <Content Include="Views\taxcolmoney\Details.vbhtml" />
+    <Content Include="Views\taxcolmoney\Edit.vbhtml" />
+    <Content Include="Views\taxcolmoney\Index.vbhtml" />
+    <Content Include="Views\taxcolmoney2\Create.vbhtml" />
+    <Content Include="Views\taxcolmoney2\Delete.vbhtml" />
+    <Content Include="Views\taxcolmoney2\Details.vbhtml" />
+    <Content Include="Views\taxcolmoney2\Edit.vbhtml" />
+    <Content Include="Views\taxcolmoney2\Index.vbhtml" />
+    <Content Include="Views\gasvsgasohole\gasvsgasoholeChart.vbhtml" />
+    <Content Include="Views\userGasolinebycou\Details.vbhtml" />
+    <Content Include="Views\usergasrevperyear\Details.vbhtml" />
+    <Content Include="Views\userGasolinebycou\Index.vbhtml" />
+    <Content Include="Views\Home\View1.vbhtml" />
+    <Content Include="Views\userGasGallonsPerYear\Details.vbhtml" />
+    <Content Include="Views\userGasGallonsPerYear\Index.vbhtml" />
+    <Content Include="Views\userGasGallonsPerYear\Chart.vbhtml" />
+    <Content Include="Views\userGasolinebycou\Chart.vbhtml" />
+    <None Include="Views\usergasrevperyear\Index.vbhtml" />
+    <Content Include="Views\usergasrevperyear\Chart.vbhtml" />
+    <Content Include="Views\userTotalGallonsPerYear\Details.vbhtml" />
+    <Content Include="Views\userTotalGallonsPerYear\Index.vbhtml" />
+    <Content Include="Views\userTotalGallonsPerYear\Chart.vbhtml" />
+    <Content Include="Views\userSFGallonsPerYear\Details.vbhtml" />
+    <Content Include="Views\userSFGallonsPerYear\Index.vbhtml" />
+    <Content Include="Views\userSFGallonsPerYear\Chart.vbhtml" />
+    <Content Include="Views\userSFRevPerYear\Details.vbhtml" />
+    <Content Include="Views\userSFRevPerYear\Index.vbhtml" />
+    <Content Include="Views\userSFRevPerYear\Chart.vbhtml" />
+    <Content Include="Views\userSpecFuelsByCou\Chart.vbhtml" />
+    <Content Include="Views\userSpecFuelsByCou\Index.vbhtml" />
+    <Content Include="Views\userTotalTaxByCounty\Chart.vbhtml" />
+    <Content Include="Views\userTotalTaxByCounty\Index.vbhtml" />
+    <Content Include="Views\userTotalTaxRevPerYear\Details.vbhtml" />
+    <Content Include="Views\userTotalTaxRevPerYear\Index.vbhtml" />
+    <Content Include="Views\userTotalTaxRevPerYear\Chart.vbhtml" />
+    <Content Include="Views\userTotalGallonsByCounty\Index.vbhtml" />
+    <Content Include="Views\userTotalGallonsByCounty\Chart1.vbhtml" />
+    <Content Include="Views\userTotalGallonsByCounty\Chart2.vbhtml" />
+    <Content Include="Views\userTotalGallonsByCounty\Chart3.vbhtml" />
+    <Content Include="Views\userLinearRegression\Chart.vbhtml" />
+    <Content Include="Views\userLinearRegression\Index.vbhtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-responsive.css" />
+    <Content Include="Content\bootstrap-responsive.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="img\glyphicons-halflings-white.png" />
+    <Content Include="img\glyphicons-halflings.png" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.8.2.js" />
+    <Content Include="Scripts\jquery-1.8.2.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Views\_ViewStart.vbhtml" />
+    <Content Include="Views\Home\About.vbhtml" />
+    <Content Include="Views\Home\Contact.vbhtml" />
+    <Content Include="Views\Home\Index.vbhtml" />
+    <Content Include="Views\Shared\Error.vbhtml" />
+    <Content Include="Views\Shared\_Layout.vbhtml" />
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1285</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:1285/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
