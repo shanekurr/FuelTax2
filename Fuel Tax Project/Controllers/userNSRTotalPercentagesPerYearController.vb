@@ -204,9 +204,9 @@ Namespace Fuel_Tax_Project
                 temp2 = (totalGasWashoeSpe + totalGasWashoe) / (totalGasClarkSpe + totalGasWashoeSpe + totalGasRuralSpe + totalGasClark + totalGasRural + totalGasWashoe)
                 temp3 = (totalGasRuralSpe + totalGasRural) / (totalGasClarkSpe + totalGasWashoeSpe + totalGasRuralSpe + totalGasClark + totalGasRural + totalGasWashoe)
 
-                List.Add(New CChartData With {.ValueString = "Clark", .ValueLong = (totalGasClarkSpe + totalGasClark), .ValueDbl = temp1 * 100})
-                List.Add(New CChartData With {.ValueString = "Washoe/Carson City", .ValueLong = (totalGasWashoeSpe + totalGasWashoe), .ValueDbl = temp2 * 100})
-                List.Add(New CChartData With {.ValueString = "Rural", .ValueLong = (totalGasRuralSpe + totalGasRural), .ValueDbl = temp3 * 100})
+                List.Add(New CChartData With {.ValueString = "Clark", .ValueLong = (totalGasClarkSpe + totalGasClark), .ValueDbl = Math.Round(temp1 * 100, 2)})
+                List.Add(New CChartData With {.ValueString = "Washoe/Carson City", .ValueLong = (totalGasWashoeSpe + totalGasWashoe), .ValueDbl = Math.Round(temp2 * 100, 2)})
+                List.Add(New CChartData With {.ValueString = "Rural", .ValueLong = (totalGasRuralSpe + totalGasRural), .ValueDbl = Math.Round(temp3 * 100, 2)})
                 ViewData("perCla") = temp1
                 ViewData("perWas") = temp2
                 ViewData("perRur") = temp3

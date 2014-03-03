@@ -111,7 +111,7 @@ End Code
             yAxis: {
                 min: 0,
                 title: {
-                    text: 'Total Fuel',
+                    text: 'Total (Gallons)',
                     align: 'high'
                 },
                 labels: {

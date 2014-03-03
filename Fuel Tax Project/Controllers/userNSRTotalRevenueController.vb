@@ -139,9 +139,9 @@ Namespace Fuel_Tax_Project
                 temp2 = (totalRevWashoe / (totalRevClark + totalRevWashoe + totalRevRural))
                 temp3 = (totalRevRural / (totalRevClark + totalRevWashoe + totalRevRural))
 
-                List.Add(New CChartData With {.ValueString = "Clark", .ValueLong = totalRevClark, .ValueDbl = temp1 * 100})
-                List.Add(New CChartData With {.ValueString = "Washoe/Carson City", .ValueLong = totalRevWashoe, .ValueDbl = temp2 * 100})
-                List.Add(New CChartData With {.ValueString = "Rural", .ValueLong = totalRevRural, .ValueDbl = temp3 * 100})
+                List.Add(New CChartData With {.ValueString = "Clark", .ValueLong = totalRevClark, .ValueDbl = Math.Round(temp1 * 100, 2)})
+                List.Add(New CChartData With {.ValueString = "Washoe/Carson City", .ValueLong = totalRevWashoe, .ValueDbl = Math.Round(temp2 * 100, 2)})
+                List.Add(New CChartData With {.ValueString = "Rural", .ValueLong = totalRevRural, .ValueDbl = Math.Round(temp3 * 100, 2)})
                 ViewData("perCla") = temp1
                 ViewData("perWas") = temp2
                 ViewData("perRur") = temp3
