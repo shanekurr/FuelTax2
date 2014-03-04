@@ -123,6 +123,13 @@ End Code
             tooltip: {
                 valuePrefix: ""
             },
+            plotOptions: {
+                column: {
+                    dataLabels: {
+                        enabled: true
+                    }
+                }
+            },
         })
     })
 </script>

@@ -74,6 +74,7 @@ End Code
                     pie: {
                         allowPointSelect: true,
                         cursor: 'pointer',
+                        animation: true,    
                         dataLabels: {
                             enabled: true
                         },
@@ -121,6 +122,13 @@ End Code
             },
             tooltip: {
                 valuePrefix: ""
+            },
+            plotOptions: {
+                column: {
+                    dataLabels: {
+                        enabled: true
+                    }
+                }
             },
         })
     })
