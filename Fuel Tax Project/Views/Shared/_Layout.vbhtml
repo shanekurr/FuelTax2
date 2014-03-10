@@ -70,7 +70,12 @@
                                     <li>@Html.ActionLink("Total Revenue", "Index", "userNSRTotalRevenue")</li>
                                 </ul>
                             </li>
-                            <li>@Html.ActionLink("Historical Data", "HistoricalData", "Home")</li>
+                            <li class="dropdown">
+                                <a href="#" data-toggle="dropdown" id="dropdownMenu4" class="dropdown-toggle">Historical Data</a>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu4">
+                                    <li>@Html.ActionLink("Historical Reports", "Index", "userHistorical")</li>
+                                    <li>@Html.ActionLink("Add File to Database", "Index", "userAddFile")</li>
+                                </ul>
                             <li class="dropdown">
                                 <a href="#" data-toggle="dropdown" id="dropdownMenu4" class="dropdown-toggle">Projections</a>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu4">

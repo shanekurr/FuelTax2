@@ -22,5 +22,17 @@ Public Class DropDownData
     Public Property startDD As Integer
     Public Property RadioValue As Integer
     Public Property county As String
+    Public Property month As String
+
+
+End Class
+
+Public Class FileData
+    Public Property FilePath As String
+    Public Property fName As String
+    Public Property months As String
+    Public Property years As Integer
+    Public Property report As String
+    Public Property radio As Integer
 
 End Class
