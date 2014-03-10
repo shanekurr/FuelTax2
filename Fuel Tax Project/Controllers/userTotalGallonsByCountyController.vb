@@ -40,6 +40,7 @@ Namespace Fuel_Tax_Project
             Dim DistinctList2 = List2.GroupBy(Function(k) k.Text).[Select](Function(p) p.First())
 
             ViewData("startDD") = DistinctList
+
             ViewData("endDD") = DistinctList
 
             ViewData("county") = DistinctList2

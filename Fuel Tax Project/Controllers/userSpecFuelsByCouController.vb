@@ -58,6 +58,6 @@ Namespace Fuel_Tax_Project
             Return View(DistinctList)
 
         End Function
-
     End Class
 End Namespace
+

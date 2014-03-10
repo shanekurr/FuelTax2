@@ -22,5 +22,6 @@ Public Class DropDownData
     Public Property startDD As Integer
     Public Property RadioValue As Integer
     Public Property county As String
+    Public Property textBox As String
 
 End Class

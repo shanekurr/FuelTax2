@@ -20,6 +20,8 @@ End Code
                     <div class="span12">
                         @Html.DropDownListFor(Function(ed1) Model.startDD, ViewData("startDD"))
                     </div>
+                    <p>Test Text Box</p>
+                    @Html.TextBoxFor(Function(ed1) Model.textBox)
                 </div>
             </div>
              @Html.RadioButton("RadioValue", "1", True) Calendar<br />

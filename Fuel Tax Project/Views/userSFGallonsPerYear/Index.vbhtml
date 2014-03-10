@@ -8,6 +8,7 @@ End Code
     <div class="span12">
         <h2>Special Fuels Gallons Per Year</h2>
     </div>
+    <div class="span6">
     @Using Html.BeginForm("Chart", "userSFGallonsPerYear", method:=FormMethod.Post)
         @Html.ValidationSummary(True)
         @<fieldset>
@@ -39,5 +40,6 @@ End Code
             </div>
         </fieldset>
     End Using
+        </div>
 </div>
 

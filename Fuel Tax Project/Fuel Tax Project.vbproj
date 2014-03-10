@@ -475,6 +475,9 @@
     <Content Include="Views\userGasGallonsPerYear\Index.vbhtml" />
     <Content Include="Views\userGasGallonsPerYear\Chart.vbhtml" />
     <Content Include="Views\userGasolinebycou\Chart.vbhtml" />
+    <Content Include="Views\userGasolinebycou\Chart3.vbhtml" />
+    <Content Include="Views\userGasolinebycou\Chart1.vbhtml" />
+    <Content Include="Views\userGasolinebycou\Chart2.vbhtml" />
     <None Include="Views\usergasrevperyear\Index.vbhtml" />
     <Content Include="Views\usergasrevperyear\Chart.vbhtml" />
     <Content Include="Views\userTotalGallonsPerYear\Details.vbhtml" />
