@@ -10,6 +10,7 @@ Imports System.Web.UI.WebControls
 Imports System.IO
 
 Namespace Fuel_Tax_Project
+    '<Authorize>
     Public Class userAddFileController
         Inherits System.Web.Mvc.Controller
 
@@ -53,7 +54,7 @@ Namespace Fuel_Tax_Project
 
         End Function
 
-
+        '<Authorize>
         'ContentUpload controller, ContentUpload action, Post
         <AcceptVerbs(HttpVerbs.Post)>
         Function ContentUpload_Post(ed1 As FileData) As ActionResult
@@ -74,7 +75,7 @@ Namespace Fuel_Tax_Project
 
                 Dim tempPath As String = "~/Reports/" & report & "/" & year & "/" & month & "/"
 
-                ' store the file inside ~/images/User-Image folder          
+                ' store the file inside       
                 Dim path_1 = Path.Combine(Server.MapPath(tempPath), filename)
                 ' this is the string you have to save in your DB
                 Dim filepathToSave As String = "Reports/" & Convert.ToString(filename)
@@ -96,7 +97,7 @@ Namespace Fuel_Tax_Project
             Return View()
         End Function
 
-
+        '<Authorize>
         Function GetFile(down As FileData) As ActionResult
 
             'file download code

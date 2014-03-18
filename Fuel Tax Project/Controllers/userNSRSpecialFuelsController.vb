@@ -8,6 +8,7 @@ Imports System.Web
 Imports System.Web.Mvc
 
 Namespace Fuel_Tax_Project
+    '<Authorize>
     Public Class userNSRSpecialFuelsController
         Inherits System.Web.Mvc.Controller
 
@@ -18,7 +19,7 @@ Namespace Fuel_Tax_Project
 
 
             Dim List As New List(Of SelectListItem)
-            List.Add(New SelectListItem With {.Text = "Select a Year", .Value = 0}) ' Adds first value as "Select a Year"
+            'List.Add(New SelectListItem With {.Text = "Select a Year", .Value = 0}) ' Adds first value as "Select a Year"
             Dim valQ = From y In db.taxcollgalls _
                        Select y.year, y.ID _
                        Distinct

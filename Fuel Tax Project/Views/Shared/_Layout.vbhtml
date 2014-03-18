@@ -83,6 +83,7 @@
                                     <li>@Html.ActionLink("Custom Scenarios", "CustomScenarios", "Home")</li>
                                 </ul>
                             </li>
+                            <li>@Html.ActionLink("Create Report", "Index", "userCreateReport")</li>
                         </ul>
                     </div>
                 </div>

@@ -33,9 +33,10 @@ End Code
             </div>
         </div>
     </div>
-    Calendar         @Html.RadioButton("RadioValue", "1", True)
-    State Fiscal     @Html.RadioButton("RadioValue", "2", False)
-    Federal Fiscal   @Html.RadioButton("RadioValue", "3", False)
+             <br />
+             @Html.RadioButton("RadioValue", "1", True) Calendar         <br/>
+             @Html.RadioButton("RadioValue", "2", False) State Fiscal    <br/>
+             @Html.RadioButton("RadioValue", "3", False) Federal Fiscal  
     <br /><br />
 
     <div class="span2 offset3">

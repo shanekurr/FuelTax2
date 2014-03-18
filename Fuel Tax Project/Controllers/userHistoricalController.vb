@@ -10,13 +10,14 @@ Imports System.IO
 
 
 Namespace Fuel_Tax_Project
+    '<Authorize>
     Public Class userHistoricalController
         Inherits System.Web.Mvc.Controller
 
         Private db As New fueltaxEntities
 
         ' GET: /Historical/
-               Function Index() As ActionResult
+        Function Index() As ActionResult
 
 
             Dim List As New List(Of SelectListItem)
@@ -58,6 +59,8 @@ Namespace Fuel_Tax_Project
 
         End Function
 
+
+        '<Authorize>
         ' GET: /Historical/Delete/5
         Function Download(ed1 As FileData) As ActionResult
 
@@ -113,7 +116,7 @@ Namespace Fuel_Tax_Project
         End Function
 
 
-
+        '<Authorize>
         Function GetFile(down As FileData) As ActionResult
 
             Dim finalPath As String = down.FilePath

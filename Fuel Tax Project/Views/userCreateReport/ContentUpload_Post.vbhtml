@@ -8,16 +8,14 @@ End Code
 </div>
 <br>
 
-<div class="row-fluid" >
+<div class="row-fluid">
 
-    If you want to add another file
-    @Html.ActionLink("Click Here.", "Index", "userAddFile")
+    If you want to generate another report
+    @Html.ActionLink("Click Here.", "Index", "userCreateReport")
     <br>
     <br>
     @Html.ActionLink("Return To Main Menu", "Index", "Home")
     <br>
     <br>
 
-</div>  
-
-
+</div>

@@ -8,6 +8,7 @@ Imports System.Web
 Imports System.Web.Mvc
 
 Namespace Fuel_Tax_Project
+    '<Authorize>
     Public Class userNSRTotalPercentagesPerYearController
         Inherits System.Web.Mvc.Controller
 
@@ -16,8 +17,8 @@ Namespace Fuel_Tax_Project
         ' GET: /userNSRTotalPercentagesPerYear/
         Function Index() As ActionResult
 
-           Dim List As New List(Of SelectListItem)
-            List.Add(New SelectListItem With {.Text = "Select a Year", .Value = 0}) ' Adds first value as "Select a Year"
+            Dim List As New List(Of SelectListItem)
+            'List.Add(New SelectListItem With {.Text = "Select a Year", .Value = 0}) ' Adds first value as "Select a Year"
             Dim valQ = From y In db.gasolinegbycous _
                        Select y.year, y.ID
                        Order By year
@@ -35,7 +36,7 @@ Namespace Fuel_Tax_Project
         End Function
 
 
-<AcceptVerbs(HttpVerbs.Post)>
+        <AcceptVerbs(HttpVerbs.Post)>
         Function Chart(ed1 As DropDownData) As ActionResult
 
             ' Calendar = 1, State Fiscal = 2, Federal Fiscal = 3
@@ -217,7 +218,7 @@ Namespace Fuel_Tax_Project
             Return View(List)
 
         End Function
-       
+
 
     End Class
 End Namespace
