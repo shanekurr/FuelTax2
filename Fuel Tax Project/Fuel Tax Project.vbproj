@@ -187,6 +187,8 @@
     <Compile Include="App_Start\RouteConfig.vb" />
     <Compile Include="App_Start\Startup.Auth.vb" />
     <Compile Include="Controllers\AccountController.vb" />
+    <Compile Include="Controllers\Excel.vb" />
+    <Compile Include="Controllers\userCreateReportController.vb" />
     <Compile Include="Controllers\gasolinegbycouController.vb" />
     <Compile Include="Controllers\gasrevperyearscen5Controller.vb" />
     <Compile Include="Controllers\gasrevperyearController.vb" />
@@ -403,6 +405,10 @@
     <Content Include="Reports\Source\2010\November\Nov2010Fh551.xlsx" />
     <Content Include="Reports\Source\2010\October\Oct2010Fh551.xlsx" />
     <Content Include="Reports\Source\2010\September\Sep2010Fh551.xlsx" />
+    <Content Include="Reports\Fy2013sf.xlsx" />
+    <Content Include="Reports\Gasgal2013.xlsx" />
+    <Content Include="Reports\2000January.xlsx" />
+    <Content Include="Reports\new.xlsx" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
@@ -514,9 +520,23 @@
     <Content Include="Views\userGasGallonsPerYear\Index.vbhtml" />
     <Content Include="Views\userGasGallonsPerYear\Chart.vbhtml" />
     <Content Include="Views\userGasolinebycou\Chart.vbhtml" />
+
+
+    <Content Include="Views\userCustScen.vbhtml" />
+
+
+
     <Content Include="Views\userHistorical\Index.vbhtml" />
     <Content Include="Views\userAddFile\Index.vbhtml" />
     <Content Include="Views\userAddFile\ContentUpload_Post.vbhtml" />
+
+    <Content Include="Views\userCreateReport\Create.vbhtml" />
+    <Content Include="Views\userCreateReport\Delete.vbhtml" />
+    <Content Include="Views\userCreateReport\Details.vbhtml" />
+    <Content Include="Views\userCreateReport\Edit.vbhtml" />
+    <Content Include="Views\userCreateReport\Index.vbhtml" />
+    <Content Include="Views\userCreateReport\ContentUpload_Post.vbhtml" />
+
     <None Include="Views\usergasrevperyear\Index.vbhtml" />
     <Content Include="Views\usergasrevperyear\Chart.vbhtml" />
     <Content Include="Views\userTotalGallonsPerYear\Details.vbhtml" />
@@ -589,6 +609,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
+    <Folder Include="Views\userCustScen\" />
     <Folder Include="Reports\DMV\2004\February\" />
     <Folder Include="Reports\DMV\2004\January\" />
     <Folder Include="Reports\DMV\2004\March\" />
@@ -760,6 +781,7 @@
     <Folder Include="Reports\FHWA\2014\November\" />
     <Folder Include="Reports\FHWA\2014\October\" />
     <Folder Include="Reports\FHWA\2014\September\" />
+    <Folder Include="Reports\NewReport\" />
     <Folder Include="Reports\Source\2011\April\" />
     <Folder Include="Reports\Source\2011\August\" />
     <Folder Include="Reports\Source\2011\December\" />
@@ -808,9 +830,30 @@
     <Folder Include="Reports\Source\2014\November\" />
     <Folder Include="Reports\Source\2014\October\" />
     <Folder Include="Reports\Source\2014\September\" />
+
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Interop.Excel1">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
