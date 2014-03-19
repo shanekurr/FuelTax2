@@ -8,19 +8,11 @@
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
-    @Styles.Render("~/Content/Plugins/JQplot/CSS")
-
-
-    @Scripts.Render("~/Content/Plugins/JQplot/JS")
     @Scripts.Render("~/Content/Plugins/highchart")
     @RenderSection("scripts", required:=False)
 </head>
 <body>
 
-
-
-
-    <
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="navbar-inner">
             <div class="container">

@@ -41,9 +41,6 @@ End Code
                         <input type="submit" value="Log in" class="btn" />
                     </div>
                 </fieldset>
-                @<p>
-                    @Html.ActionLink("Register", "Register") if you don't have a local account.
-                </p>
             End Using
         </section>
     </div>

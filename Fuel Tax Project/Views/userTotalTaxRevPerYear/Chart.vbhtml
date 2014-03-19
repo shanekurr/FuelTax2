@@ -21,7 +21,6 @@ End Code
                     <th>
                         Gallons
                     </th>
-                    <th></th>
             </thead>
             <tbody>
                 </tr>

@@ -6,6 +6,8 @@ Public Class CChartData
     Public Property Year2 As Integer
     Public Property ValueS1 As Integer
     Public Property ValueS2 As Integer
+    Public Property ValueS3 As Integer
+    Public Property ValueS4 As Integer
     Public Property ValueString As String
     Public Property ValueString2 As String
     Public Property newSize As Integer

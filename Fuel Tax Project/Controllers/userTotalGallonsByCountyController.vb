@@ -16,13 +16,13 @@ Namespace Fuel_Tax_Project
         ' GET: /userTotalGallonsByCounty/
         Function Index() As ActionResult
             Dim List As New List(Of SelectListItem) ' Year query to populate dropdown
-            List.Add(New SelectListItem With {.Text = "Select a Year", .Value = 0}) ' Adds first value as "Select a Year"
+            'List.Add(New SelectListItem With {.Text = "Select a Year", .Value = 0}) ' Adds first value as "Select a Year"
             Dim valQ = From y In db.gasolinegbycous _
                        Select y.year, y.ID _
                        Order By year
 
             Dim List2 As New List(Of SelectListItem) ' County query to populate dropdown
-            List2.Add(New SelectListItem With {.Text = "Select a County", .Value = 0}) ' Adds first value as "Select a County"
+            ' List2.Add(New SelectListItem With {.Text = "Select a County", .Value = 0}) ' Adds first value as "Select a County"
             Dim valQ2 = From y In db.gasolinegbycous _
                        Select y.CountyN, y.ID _
                        Order By CountyN

@@ -1,10 +1,10 @@
 @ModelType RegisterViewModel
 @Code
-    ViewBag.Title = "Register"
+    ViewBag.Title = "Register A New Administrator Account"
 End Code
 
 <hgroup class="title">
-    <h1>@ViewBag.Title.</h1>
+    <h1>@ViewBag.Title</h1>
 </hgroup>
 
 @Using (Html.BeginForm())
@@ -12,7 +12,7 @@ End Code
     @Html.ValidationSummary()
     
     @<fieldset class="form-horizontal">
-        <legend>Create a new account.</legend>
+        <legend>Create a new account</legend>
         <div class="control-group">
             @Html.LabelFor(Function(m) m.UserName, New With { .class  = "control-label" })
             <div class="controls">

@@ -23,7 +23,7 @@ End Code
                     </div>
                     @Html.RadioButton("RadioValue", "1", True) Calendar<br />
                     @Html.RadioButton("RadioValue", "2", False) State Fiscal<br />
-                    @Html.RadioButton("RadioValue", "3", False) Federal Fiscal<br />
+                    @Html.RadioButton("RadioValue", "3", False) Federal Fiscal<br /><br />
 
                     <div class="span12 offset8">
                         <button id="submit" name="submit" class="btn-btn-primary">Submit</button>
@@ -37,16 +37,18 @@ End Code
                 @<fieldset>
                     <legend>Special Fuel Gallons By Month and County</legend>
                     <div class="row-fluid">
+                        <div class="span12">
                         <p>Please Select A County</p>
-                        <div class="span6">
-                            @Html.DropDownListFor(Function(ed1) Model.county, ViewData("county"))
+                            <div class="span12">
+                                @Html.DropDownListFor(Function(ed1) Model.county, ViewData("county"))
+                            </div>
                         </div>
                     </div>
                     <br />
                     <div class="row-fluid">
-                        <div class="span6">
+                        <div class="span12">
                             <p>Please Select A Year </p>
-                            <div class="span6">
+                            <div class="span12">
                                 @Html.DropDownListFor(Function(ed1) Model.startDD, ViewData("startDD"))
                             </div>
                         </div>
@@ -89,7 +91,7 @@ End Code
 
                     @Html.RadioButton("RadioValue", "1", True) Calendar<br />
                     @Html.RadioButton("RadioValue", "2", False) State Fiscal<br />
-                    @Html.RadioButton("RadioValue", "3", False) Federal Fiscal<br />
+                    @Html.RadioButton("RadioValue", "3", False) Federal Fiscal<br /><br />
 
                     <div class="span12 offset8">
                         <button id="submit" name="submit" class="btn-btn-primary">Submit</button>
@@ -98,3 +100,4 @@ End Code
             End Using
         </div> <!-- end third form -->
     </div>
+ 

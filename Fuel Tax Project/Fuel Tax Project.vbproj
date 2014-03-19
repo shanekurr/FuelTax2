@@ -489,7 +489,7 @@
     <Content Include="Views\userSFRevPerYear\Details.vbhtml" />
     <Content Include="Views\userSFRevPerYear\Index.vbhtml" />
     <Content Include="Views\userSFRevPerYear\Chart.vbhtml" />
-    <Content Include="Views\userSpecFuelsByCou\Chart.vbhtml" />
+    <Content Include="Views\userSpecFuelsByCou\Chart1.vbhtml" />
     <Content Include="Views\userSpecFuelsByCou\Index.vbhtml" />
     <Content Include="Views\userTotalTaxByCounty\Chart.vbhtml" />
     <Content Include="Views\userTotalTaxByCounty\Index.vbhtml" />
@@ -510,6 +510,8 @@
     <Content Include="Views\userNSRTotalPercentagesPerYear\Index.vbhtml" />
     <Content Include="Views\userNSRTotalRevenue\Chart.vbhtml" />
     <Content Include="Views\userNSRTotalRevenue\Index.vbhtml" />
+    <Content Include="Views\userSpecFuelsByCou\Chart2.vbhtml" />
+    <Content Include="Views\userSpecFuelsByCou\Chart3.vbhtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-responsive.css" />

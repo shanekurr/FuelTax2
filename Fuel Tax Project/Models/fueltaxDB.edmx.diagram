@@ -7,17 +7,17 @@
       <Diagram DiagramId="439371f953714259a8d44bb959cf0906" Name="Diagram1">
         <EntityTypeShape EntityType="fueltaxModel.gasolinegbycou" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="fueltaxModel.gasrevperyear" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="fueltaxModel.gasrevperyearscen1" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="fueltaxModel.gasrevperyearscen2" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="fueltaxModel.gasrevperyearscen3" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="fueltaxModel.gasrevperyearscen4" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="fueltaxModel.gasrevperyearscen1" Width="1.75" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="fueltaxModel.gasrevperyearscen2" Width="1.75" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="fueltaxModel.gasrevperyearscen3" Width="1.75" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="fueltaxModel.gasrevperyearscen4" Width="1.75" PointX="4.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="fueltaxModel.gasrevperyearscen5" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="fueltaxModel.gasrevtohwyfnd" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="fueltaxModel.gasvsgasohole" Width="1.5" PointX="2.75" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="fueltaxModel.mcspefuel" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="fueltaxModel.news" Width="1.5" PointX="4.75" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="fueltaxModel.taxcollgall" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="fueltaxModel.taxcolmoney" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="fueltaxModel.taxcolmoney" Width="1.5" PointX="8.5" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="fueltaxModel.taxcolmoney2" Width="1.5" PointX="8.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="fueltaxModel.accessright" Width="1.5" PointX="8.75" PointY="6.75" IsExpanded="true" />
       </Diagram>

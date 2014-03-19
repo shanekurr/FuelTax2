@@ -54,14 +54,12 @@ Public Class AccountController
 
     '
     ' GET: /Account/Register
-    <AllowAnonymous>
     Public Function Register() As ActionResult
         Return View()
     End Function
 
     '
     ' POST: /Account/Register
-    <AllowAnonymous>
     <HttpPost>
     <ValidateAntiForgeryToken>
     Public Async Function Register(model As RegisterViewModel) As Task(Of ActionResult)
@@ -149,70 +147,6 @@ Public Class AccountController
         End If
 
         ' If we got this far, something failed, redisplay form
-        Return View(model)
-    End Function
-
-    '
-    ' POST: /Account/ExternalLogin
-    <HttpPost>
-    <AllowAnonymous>
-    <ValidateAntiForgeryToken>
-    Public Function ExternalLogin(provider As String, returnUrl As String) As ActionResult
-        ' Request a redirect to the external login provider
-        Return New ChallengeResult(provider, Url.Action("ExternalLoginCallback", "Account", New With {
-            .loginProvider = provider,
-            .ReturnUrl = returnUrl
-        }))
-    End Function
-
-    '
-    ' GET: /Account/ExternalLoginCallback
-    <AllowAnonymous>
-    Public Async Function ExternalLoginCallback(loginProvider As String, returnUrl As String) As Task(Of ActionResult)
-        Dim id As ClaimsIdentity = Await IdentityManager.Authentication.GetExternalIdentityAsync(AuthenticationManager)
-        ' Sign in this external identity if its already linked
-        Dim result As IdentityResult = Await IdentityManager.Authentication.SignInExternalIdentityAsync(AuthenticationManager, id)
-        If result.Success Then
-            Return RedirectToLocal(returnUrl)
-        ElseIf User.Identity.IsAuthenticated Then
-            ' Try to link if the user is already signed in
-            result = Await IdentityManager.Authentication.LinkExternalIdentityAsync(id, User.Identity.GetUserId())
-            If result.Success Then
-                Return RedirectToLocal(returnUrl)
-            Else
-                Return View("ExternalLoginFailure")
-            End If
-        Else
-            ' Otherwise prompt to create a local user
-            ViewBag.ReturnUrl = returnUrl
-            ViewBag.LoginProvider = loginProvider
-            Return View("ExternalLoginConfirmation", New ExternalLoginConfirmationViewModel() With {
-                .UserName = id.Name
-            })
-        End If
-    End Function
-
-    '
-    ' POST: /Account/ExternalLoginConfirmation
-    <HttpPost>
-    <AllowAnonymous>
-    <ValidateAntiForgeryToken>
-    Public Async Function ExternalLoginConfirmation(model As ExternalLoginConfirmationViewModel, returnUrl As String) As Task(Of ActionResult)
-        If User.Identity.IsAuthenticated Then
-            Return RedirectToAction("Manage")
-        End If
-
-        If ModelState.IsValid Then
-            ' Get the information about the user from the external login provider
-            Dim result As IdentityResult = Await IdentityManager.Authentication.CreateAndSignInExternalUserAsync(AuthenticationManager, New User(model.UserName))
-            If result.Success Then
-                Return RedirectToLocal(returnUrl)
-            Else
-                AddErrors(result)
-            End If
-        End If
-
-        ViewBag.ReturnUrl = returnUrl
         Return View(model)
     End Function
 

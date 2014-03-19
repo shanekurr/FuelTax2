@@ -17,10 +17,6 @@ End Code
             @Html.Partial("_SetPasswordPartial")
         End If
 
-        <section id="externalLogins">
-            @Html.Action("RemoveAccountList")
-            @Html.Action("ExternalLoginsList", New With { .ReturnUrl = ViewBag.ReturnUrl })
-        </section>
     </div>
 </div>
 @Section Scripts 
