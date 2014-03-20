@@ -5,6 +5,8 @@ End Code
 <div class="row-fluid">
     <div class="span12">
         <h2>Select the file to upload data into the database</h2>
+    </div>
+    <div class="span6">
         <!-- New With {.enctype = "multipart/form-data", .onsubmit = "return confirmSubmit();"}) -->
         @Using Html.BeginForm("ContentUpload_Post", "userAddFile", FormMethod.Post, New With {.enctype = "multipart/form-data"})
             @Html.ValidationSummary(True)

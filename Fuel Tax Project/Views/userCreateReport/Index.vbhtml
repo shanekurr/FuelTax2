@@ -6,6 +6,8 @@ End Code
     <div class="span12">
         <h4>Use this form to create a report on the monthly consumption of gasoline.</h4>
         Select a Fiscal Year file and a Gasgal file then click "Create Report".
+    </div>
+    <div class="span6">
         @Using Html.BeginForm("ContentUpload_Post", "userCreateReport", FormMethod.Post, New With {.enctype = "multipart/form-data"})
             @Html.ValidationSummary(True)
             @<fieldset>
