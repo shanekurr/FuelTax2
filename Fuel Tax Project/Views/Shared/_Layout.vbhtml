@@ -70,12 +70,8 @@
                                     <li>@Html.ActionLink("Total Revenue", "Index", "userNSRTotalRevenue")</li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
-                                <a href="#" data-toggle="dropdown" id="dropdownMenu4" class="dropdown-toggle">Historical Data</a>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu4">
-                                    <li>@Html.ActionLink("Historical Reports", "Index", "userHistorical")</li>
-                                    <li>@Html.ActionLink("Add File to Database", "Index", "userAddFile")</li>
-                                </ul>
+
+                            <li>@Html.ActionLink("Historical Reports", "Index", "userHistorical")</li>
                             <li class="dropdown">
                                 <a href="#" data-toggle="dropdown" id="dropdownMenu4" class="dropdown-toggle">Projections</a>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu4">
@@ -83,8 +79,20 @@
                                     <li>@Html.ActionLink("Custom Scenarios", "CustomScenarios", "Home")</li>
                                 </ul>
                             </li>
-                            <li>@Html.ActionLink("Create Report", "Index", "userCreateReport")</li>
-                        </ul>
+                            @If Request.IsAuthenticated Then
+                            @<li class="dropdown">
+                                <a href="#" data-toggle="dropdown" id="dropdownMenu5" class="dropdown-toggle">Upload/Create Report</a>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu5">
+                                    <li>@Html.ActionLink("Create Report", "Index", "userCreateReport")</li>
+                                    <li>@Html.ActionLink("Add File To Database", "Index", "userAddFile")</li>
+                                </ul>
+                            </li>
+                            @<li>@Html.ActionLink("Register New User", "Register", "Account", routeValues:=Nothing, htmlAttributes:=New With {.id = "registerLink"})</li>
+
+                            End If
+                                
+
+                         </ul>
                     </div>
                 </div>
             </div>
