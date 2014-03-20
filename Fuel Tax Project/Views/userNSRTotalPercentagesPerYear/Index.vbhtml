@@ -6,7 +6,8 @@ End Code
 <div class="row-fluid">
     <div class="span12">
         <h2>North, South, Rural Total Fuel Percentages</h2>
-
+    </div>
+    <div class="span6">
         @Using Html.BeginForm("Chart", "userNSRTotalPercentagesPerYear", method:=FormMethod.Post)
             @Html.ValidationSummary(True)
             @<fieldset>

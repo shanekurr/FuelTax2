@@ -7,7 +7,8 @@ End Code
 <div class="row-fluid">
     <div class="span12">
         <h2>North, South, Rural Special Fuels</h2>
-
+    </div>
+    <div class="span6">
     @Using Html.BeginForm("Chart", "userNSRSpecialFuels", method:=FormMethod.Post)
         @Html.ValidationSummary(True)
         @<fieldset>
