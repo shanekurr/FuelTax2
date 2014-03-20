@@ -8,6 +8,9 @@ Imports System.Web
 Imports System.Web.Mvc
 Imports System.Web.UI.WebControls
 Imports System.IO
+Imports Excel = Microsoft.Office.Interop.Excel
+Imports Microsoft.Office.Interop.Excel
+Imports System.Reflection
 
 Namespace Fuel_Tax_Project
     '<Authorize>
@@ -68,17 +71,20 @@ Namespace Fuel_Tax_Project
             Dim errMsg As String = "File was uploaded successfully to the database."
             Dim filename As String = Path.GetFileName(pf.FileName)
 
+            Dim tempPath As String = "~/Reports/" & report & "/" & year & "/" & month & "/"
+
+            ' store the file inside       
+            Dim path_1 = Path.Combine(Server.MapPath(tempPath), filename)
+            ' this is the string you have to save in your DB
+            Dim filepathToSave As String = "Reports/" & Convert.ToString(filename)
+
             'could add code here to check if last 4 letters are excel file
             If filename = "" Then
                 errMsg = "Error. No file selected. Please try again."
             Else
 
-                Dim tempPath As String = "~/Reports/" & report & "/" & year & "/" & month & "/"
 
-                ' store the file inside       
-                Dim path_1 = Path.Combine(Server.MapPath(tempPath), filename)
-                ' this is the string you have to save in your DB
-                Dim filepathToSave As String = "Reports/" & Convert.ToString(filename)
+
 
                 'if the directory doesn't exist, create it first and then save file, else will give an error
                 If Not Directory.Exists(Server.MapPath(tempPath)) Then
@@ -92,6 +98,141 @@ Namespace Fuel_Tax_Project
             ' you can get more information about the upload file use HttpPostedFileBase method. 
             ' Add Code here to save file path in DB -> filepathToSave
             '----------------------------------------------
+
+            'Here is where the upload to tables will be.
+            Try
+                'open the DMV file and read data
+                '###################################
+                If report = "DMV" Then
+
+                    Dim DMVApp As Excel.Application
+                    Dim DMVwb As Workbook
+                    Dim DMVws As Worksheet
+                    DMVApp = New Excel.Application
+                    DMVwb = DMVApp.Workbooks.Open(path_1)
+                    DMVws = DMVwb.Worksheets(1)
+
+                    Dim DMVusedRange = DMVws.UsedRange()
+                    Dim DMVusedRangeAs2DArray As Object(,) = DMVusedRange.Value2
+                    DMVwb.Save()
+                    DMVwb.Close()
+                    DMVApp.Quit()
+                    'Marshal.ReleaseComObject(Application)
+
+                    'create integer variables to parse excel sheet
+                    Dim startCell As Integer = 0
+                    Dim endCell As Integer = 0
+
+
+                    'create new queries to insert new data
+                    '###################################
+
+                    ' Remove old data from the tables before inserting updated data
+                    Dim removeOldData = From o In db.taxcolmoney2 _
+                                        Where o.year = year AndAlso o.month = month _
+                                        Select o
+                    Dim removeOldData2 = From o In db.taxcollgalls _
+                                        Where o.year = year AndAlso o.month = month _
+                                        Select o
+                    Dim removeOldData3 = From o In db.gasolinegbycous _
+                                        Where o.year = year AndAlso o.month = month _
+                                        Select o
+
+                    Dim List2 As New List(Of SelectListItem)
+
+                    ' test loop to ensure data is removed
+                    For Each k In removeOldData
+                        List2.Add(New SelectListItem With {.Text = k.year, .Value = k.year})
+                    Next
+
+                    'delete from taxcolmoney2
+                    For Each l In removeOldData
+                        db.taxcolmoney2.Remove(l)
+                        db.SaveChanges()
+
+                    Next
+
+                    'delete from taxcolgalls
+                    For Each l In removeOldData2
+                        db.taxcollgalls.Remove(l)
+                        db.SaveChanges()
+
+                    Next
+
+                    'delete from gasolinebycous
+                    For Each l In removeOldData3
+                        db.gasolinegbycous.Remove(l)
+                        db.SaveChanges()
+
+                    Next
+
+                    'submit the changes to the database
+
+                    Dim List As New List(Of SelectListItem)
+
+                    ' test loop to ensure data is removed
+                    For Each k In removeOldData
+                        List.Add(New SelectListItem With {.Text = k.year, .Value = k.year})
+                    Next
+
+                    ViewData("testList") = List
+                    ViewData("testListBefore") = List2
+
+
+                    ' Insert new data into each table
+                    If year >= 2006 Then
+                        'set sheet to tab 8 (maybe 7 depending on PHP starting point)
+                    End If
+
+                    If year = 2005 AndAlso month = "August" Then
+                        'use tab three to upload data
+
+
+                    Else
+                        'use tab 4 to upload data
+
+
+                    End If
+
+                    If year = 2004 Or (year = 2005 AndAlso month = "January" Or month = "February" Or month = "March" Or month = "April" Or month = "May" Or month = "June") Then
+                        ' start at 10
+                        ' end at 26
+
+                    ElseIf year = 2005 AndAlso (month = "July" Or month = "August" Or month = "September" Or month = "October") Then
+                        ' start at 2
+                        ' end at 18
+
+                    End If
+
+                    ' start the insert statement
+                    For m As Integer = startCell To endCell
+
+
+                        'db.taxcollgalls.Add()
+
+                    Next
+                    ' finish the if statement for 2011 and 2010 and ensure Jan and Feb are not inlcuded if the year is 2010
+                    If year >= 2011 Or (year = 2010 AndAlso month IsNot "January" AndAlso month IsNot "February") Then
+                        ' start at 12
+                        ' end at 28
+
+                    End If
+
+                End If
+
+
+                'submit changes to the database
+                db.SaveChanges()
+
+
+                GC.Collect()
+
+
+            Catch e As System.Exception
+                errMsg = "Something went bad. Try again"
+            End Try
+
+            'end the uploading to tables function
             ViewData("err") = errMsg
 
             Return View()
