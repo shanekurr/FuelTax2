@@ -825,7 +825,6 @@
     <Folder Include="Reports\Source\2014\November\" />
     <Folder Include="Reports\Source\2014\October\" />
     <Folder Include="Reports\Source\2014\September\" />
-    <Folder Include="Views\userCustScen\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

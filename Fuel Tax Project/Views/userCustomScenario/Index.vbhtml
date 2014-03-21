@@ -23,24 +23,23 @@ End Code
                         <div class="span6">
                             @Html.DropDownListFor(Function(ed1) Model.Scen1DD, ViewData("IntList"))
                             @Html.RadioButton("Scen1Radio", "1", False) Up  
-                            @Html.RadioButton("Scen1Radio", "2", False) Down<br />
+                            @Html.RadioButton("Scen1Radio", "2", False) Down<br /><br />
                         </div>
                     </div>
-                </div>
-                <div class="row-fluid">
+            
                     <div class="span6">
-                        <br />
                         <p>Scenario 2</p>
                         <div class="span6">
                             @Html.DropDownListFor(Function(ed1) Model.Scen2DD, ViewData("IntList"))
                             @Html.RadioButton("Scen2Radio", "1", False) Up
-                            @Html.RadioButton("Scen2Radio", "2", False) Down<br />
+                            @Html.RadioButton("Scen2Radio", "2", False) Down<br /><br />
                         </div>
                     </div>
-                </div>
+                </div><br />
+
                  <div class="row-fluid">
                      <div class="span6">
-                         <br />
+                         
                          <p>Scenario 3</p>
                          <div class="span6">
                              @Html.DropDownListFor(Function(ed1) Model.Scen3DD, ViewData("IntList"))
@@ -48,10 +47,7 @@ End Code
                              @Html.RadioButton("Scen3Radio", "2", False) Down<br />
                          </div>
                      </div>
-                 </div>
-                 <div class="row-fluid">
                      <div class="span6">
-                         <br />
                          <p>Scenario 4</p>
                          <div class="span6">
                              @Html.DropDownListFor(Function(ed1) Model.Scen4DD, ViewData("IntList"))
@@ -59,8 +55,8 @@ End Code
                              @Html.RadioButton("Scen4Radio", "2", False) Down<br />
                          </div>
                      </div>
-                 </div>
-                <div class="span2 offset3">
+                 </div><br /><br />
+                <div class="span2">
                     <button id="submit" name="submit" class="btn-btn-primary">Submit</button>
                 </div>
             </fieldset>
