@@ -76,7 +76,7 @@
                                 <a href="#" data-toggle="dropdown" id="dropdownMenu4" class="dropdown-toggle">Projections</a>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu4">
                                     <li>@Html.ActionLink("Linear Regression", "Index", "userLinearRegression")</li>
-                                    <li>@Html.ActionLink("Custom Scenarios", "CustomScenarios", "Home")</li>
+                                    <li>@Html.ActionLink("Custom Scenarios", "Index", "userCustomScenario")</li>
                                 </ul>
                             </li>
                             @If Request.IsAuthenticated Then

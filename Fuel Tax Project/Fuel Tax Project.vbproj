@@ -199,6 +199,7 @@
     <Compile Include="Controllers\gasrevtohwyfndController.vb" />
     <Compile Include="Controllers\gasvsgasoholeController.vb" />
     <Compile Include="Controllers\userAddFileController.vb" />
+    <Compile Include="Controllers\userCustomScenarioController.vb" />
     <Compile Include="Controllers\userHistoricalController.vb" />
     <Compile Include="Controllers\mcspefuelController.vb" />
     <Compile Include="Controllers\newsController.vb" />
@@ -520,23 +521,18 @@
     <Content Include="Views\userGasGallonsPerYear\Index.vbhtml" />
     <Content Include="Views\userGasGallonsPerYear\Chart.vbhtml" />
     <Content Include="Views\userGasolinebycou\Chart.vbhtml" />
-
-
     <Content Include="Views\userCustScen.vbhtml" />
-
-
-
     <Content Include="Views\userHistorical\Index.vbhtml" />
     <Content Include="Views\userAddFile\Index.vbhtml" />
     <Content Include="Views\userAddFile\ContentUpload_Post.vbhtml" />
-
     <Content Include="Views\userCreateReport\Create.vbhtml" />
     <Content Include="Views\userCreateReport\Delete.vbhtml" />
     <Content Include="Views\userCreateReport\Details.vbhtml" />
     <Content Include="Views\userCreateReport\Edit.vbhtml" />
     <Content Include="Views\userCreateReport\Index.vbhtml" />
     <Content Include="Views\userCreateReport\ContentUpload_Post.vbhtml" />
-
+    <Content Include="Views\userCustomScenario\Chart.vbhtml" />
+    <Content Include="Views\userCustomScenario\Index.vbhtml" />
     <None Include="Views\usergasrevperyear\Index.vbhtml" />
     <Content Include="Views\usergasrevperyear\Chart.vbhtml" />
     <Content Include="Views\userTotalGallonsPerYear\Details.vbhtml" />
@@ -609,7 +605,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
-    <Folder Include="Views\userCustScen\" />
     <Folder Include="Reports\DMV\2004\February\" />
     <Folder Include="Reports\DMV\2004\January\" />
     <Folder Include="Reports\DMV\2004\March\" />
@@ -830,12 +825,30 @@
     <Folder Include="Reports\Source\2014\November\" />
     <Folder Include="Reports\Source\2014\October\" />
     <Folder Include="Reports\Source\2014\September\" />
-
+    <Folder Include="Views\userCustScen\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>5</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
     <COMReference Include="Microsoft.Office.Interop.Excel1">
       <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
       <VersionMajor>1</VersionMajor>
