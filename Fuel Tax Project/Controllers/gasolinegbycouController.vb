@@ -42,7 +42,7 @@ Namespace Fuel_Tax_Project
         'more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         <HttpPost()>
         <ValidateAntiForgeryToken()>
-        Function Create(<Bind(Include:="ID,year,month,CountyN,Gallon,perTotal")> ByVal gasolinegbycou As gasolinegbycou) As ActionResult
+        Function Create(<Bind(Include:="year,month,CountyN,Gallon,perTotal")> ByVal gasolinegbycou As gasolinegbycou) As ActionResult
             If ModelState.IsValid Then
                 db.gasolinegbycous.Add(gasolinegbycou)
                 db.SaveChanges()
@@ -68,7 +68,7 @@ Namespace Fuel_Tax_Project
         'more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         <HttpPost()>
         <ValidateAntiForgeryToken()>
-        Function Edit(<Bind(Include:="ID,year,month,CountyN,Gallon,perTotal")> ByVal gasolinegbycou As gasolinegbycou) As ActionResult
+        Function Edit(<Bind(Include:="year,month,CountyN,Gallon,perTotal")> ByVal gasolinegbycou As gasolinegbycou) As ActionResult
             If ModelState.IsValid Then
                 db.Entry(gasolinegbycou).State = EntityState.Modified
                 db.SaveChanges()

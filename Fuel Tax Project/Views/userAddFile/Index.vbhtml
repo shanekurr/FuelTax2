@@ -39,7 +39,7 @@ End Code
                  </div>
                      <br>
                  <label>Data File: <input type="file" name="ExcelFile" id="ExcelFile"/> </label>
-                     <div class="span6 offset1">
+                     <div class="span6 offset3">
                         <br> <input type="submit" id="submit" name="submit" value="Upload" class="btn-btn-primary">
                      </div> 
 </fieldset> 
