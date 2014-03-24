@@ -21,10 +21,10 @@ End Code
                     <th>
                         Gallons
                     </th>
-                    <th></th>
+                </tr>
             </thead>
             <tbody>
-                </tr>
+                
                 @For Each item As CChartData In Model
                     @<tr>
                         <td>

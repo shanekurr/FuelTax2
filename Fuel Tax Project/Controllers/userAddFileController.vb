@@ -77,7 +77,7 @@ Namespace Fuel_Tax_Project
             ' store the file inside       
             path_1 = Path.Combine(Server.MapPath(tempPath), filename)
             ' this is the string you have to save in your DB
-            Dim filepathToSave As String = "Reports/" & Convert.ToString(filename)
+            'Dim filepathToSave As String = "Reports/" & Convert.ToString(filename)
 
             'could add code here to check if last 4 letters are excel file
             If filename = "" Then
@@ -87,9 +87,10 @@ Namespace Fuel_Tax_Project
                 'if the directory doesn't exist, create it first and then save file, else will give an error
                 If Not Directory.Exists(Server.MapPath(tempPath)) Then
                     Directory.CreateDirectory(Server.MapPath(tempPath))
+               
                 End If
                 'save file to server
-                pf.SaveAs(path_1)
+                'pf.SaveAs(path_1)
 
             End If
             '--------------------------------------------
@@ -132,8 +133,9 @@ Namespace Fuel_Tax_Project
 
                 Dim currentTab As Object(,)
 
+                Dim countiesArray As String() = {"Carson City", "County Total", "County Total", "Douglas", "County Total", "Esmeralda", "Eureka", "County Total", "County Total", "County Total", "County Total", "Mineral", "County Total", "County Total", "Storey", "County Total", "County Total"}
                 'Create an array of counties. Not sure why. Need to ask the people that built the prototype
-                Dim countyArray As String() = {"Carson City", "Churchill", "County Total", "Clark", "County Total", "Douglas", "Elko", "County Total", "Esmeralda", "Eureka", "Humboldt", "County Total", "Lincoln", "County Total", "Lyon", "County Total", "Mineral", "Nye", "County Total", "Pershing", "County Total", "Storey", "Washoe", "County Total", "White Pine", "County Total"}
+                Dim countyNamesArray As String() = {"Carson City", "Churchill", "Clark", "Douglas", "Elko", "Esmeralda", "Eureka", "Humboldt", "Lincoln", "Lyon", "Mineral", "Nye", "Pershing", "Storey", "Washoe", "White Pine"}
 
 
                 DMVwb.Save()
@@ -214,25 +216,27 @@ Namespace Fuel_Tax_Project
                     'set sheet to tab 9 
 
                     startCell = 13
-                    endCell = 79
+                    endCell = 78
 
                     For l As Integer = startCell To endCell
 
                         'compare the strings in the excel sheet to the columns in the table 
-                        tempTable.CountyN = tab9Array(l, 1)
+                        tempTable.CountyN = CStr(tab9Array(l, 1))
 
                         'String.Compare(string a, string b, boolean ignoreCase)
-                        If (String.Compare(countyArray(count), tempTable.CountyN, True)) Then
+                        If (String.Compare(tempTable.CountyN, countyNamesArray(count), True)) Then
 
                             'grab each cell and set variable to the corresponding column in the table
-                            tempTable.AmountD = tab9Array(l, 8)
-                            tempTable.month = month
-                            tempTable.year = year
+                            tempTable.AmountD = CInt(tab9Array(l, 8))
+                            tempTable.month = CStr(month)
+                            tempTable.year = CInt(year)
 
                             db.taxcolmoney2.Add(tempTable)
                             db.SaveChanges()
                             ' you may have to only save changes at the end of the function. But to be safe, go ahead and save every chance you get.
                         End If
+                        count += 1
+
                     Next
                     'insert into taxcollgal year month CountyN AmountD
 
@@ -268,9 +272,9 @@ Namespace Fuel_Tax_Project
                 ' start the insert statement
                 For m As Integer = startCell To endCell
 
-                    tempGasolineByCounty.CountyN = currentTab(1, m)
-                    tempGasolineByCounty.Gallon = currentTab(2, m)
-                    tempGasolineByCounty.perTotal = currentTab(3, m)
+                    tempGasolineByCounty.CountyN = CStr(currentTab(m, 1))
+                    tempGasolineByCounty.Gallon = CInt(currentTab(m, 2))
+                    tempGasolineByCounty.perTotal = CInt(currentTab(m, 3))
                     tempGasolineByCounty.month = month
                     tempGasolineByCounty.year = year
 
@@ -291,8 +295,9 @@ Namespace Fuel_Tax_Project
 
                         tempTaxCollGall.CountyN = currentTab(m, 1)
                         tempTaxCollGall.Diesel = currentTab(m, 2)
-                        tempTaxCollGall.LPG = currentTab(m, 3)
-                        tempTaxCollGall.A55 = currentTab(m, 4)
+                        tempTaxCollGall.CNG = currentTab(m, 3)
+                        tempTaxCollGall.LPG = currentTab(m, 4)
+                        tempTaxCollGall.A55 = currentTab(m, 5)
                         tempTaxCollGall.month = month
                         tempTaxCollGall.year = year
 

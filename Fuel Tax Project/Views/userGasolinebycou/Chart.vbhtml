@@ -20,7 +20,7 @@ End Code
                 <th>
                     Gallons
                 </th>
-                <th></th>
+                
             </tr>
             @For Each item As CChartData In Model
                 @<tr>
@@ -30,7 +30,7 @@ End Code
                     <td>
                         @Html.DisplayFor(Function(modelItem) item.ValueS1)
                     </td>
-                    <td></td>
+                    
                 </tr>
             Next
 
