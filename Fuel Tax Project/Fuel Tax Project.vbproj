@@ -334,6 +334,8 @@
     <Content Include="Content\excelexport\jquery.base64.js" />
     <Content Include="Content\excelexport\jquery.btechco.excelexport.js" />
     <Content Include="Content\excelexport\jquery.btechco.excelexport.min.js" />
+    <Content Include="Content\mapstyle.css" />
+    <Content Include="Map.png" />
     <Content Include="Reports\Mar2013.xlsx" />
     <Content Include="Reports\Mar2013Fh551.xlsx" />
     <Content Include="Reports\STAT03-13Records.xlsx" />

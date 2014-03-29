@@ -1,0 +1,216 @@
+#county
+{
+	font-family: Helvetica;
+	font-size: 12px;
+	margin: 2px;
+    position: absolute;
+}
+#countyNoBox
+{   
+	font-family: Helvetica;
+	font-size: 12px;
+	position: absolute;
+	margin: 2px;
+}
+#eureka
+{   
+    line-height: 1;
+	position: relative; 
+	top: 18px; 
+	left: 418px;
+	height: 80px;
+	width: 100px;
+	background: rgb(0, 0, 0); /* fallback color */
+   	background: rgba(0, 0, 0, 0.1);
+   	border: 1px solid black;
+}
+#lander
+{   
+    line-height: 1;
+	position: relative; 
+	top: 18px; 
+	left: 268px;
+	height: 80px;
+	width: 100px;
+	background: rgb(0, 0, 0); /* fallback color */
+   	background: rgba(0, 0, 0, 0.1);
+   	border: 1px solid black;
+}
+#washoe
+{   
+    line-height: 1;
+	position: relative; 
+	top: 17px; 
+	left: 108px;
+	height: 80px;
+	width: 100px;
+	background: rgb(0, 0, 0); /* fallback color */
+   	background: rgba(0, 0, 0, 0.1);
+   	border: 1px solid black;
+}
+#storey
+{   
+    line-height: 1;
+	position: relative; 
+	top: 141px; 
+	left: 49px;
+	height: 80px;
+	width: 100px;
+	background: rgb(0, 0, 0); /* fallback color */
+   	background: rgba(0, 0, 0, 0.1);
+   	border: 1px solid black;
+}
+
+#lyon
+{	
+    line-height: 1;
+	position: relative;
+	left: 49px;
+	top: 265px;
+	height: 80px;
+	width: 100px;
+	background: rgb(0, 0, 0); /* fallback color */
+   	background: rgba(0, 0, 0, 0.1);
+   	border: 1px solid black;
+}
+
+#carsoncity
+{	
+    line-height: 1;
+	position: relative;
+	left: 49px;
+	top: 370px;
+	height: 80px;
+	width: 100px;
+	background: rgb(0, 0, 0); /* fallback color */
+   	background: rgba(0, 0, 0, 0.1);
+   	border: 1px solid black;
+}
+
+#douglas
+{	
+    line-height: 1;
+	position: relative;
+	left: 49px;
+	top: 480px;
+	height: 80px;
+	width: 100px;
+	background: rgb(0, 0, 0); /* fallback color */
+   	background: rgba(0, 0, 0, 0.1);
+   	border: 1px solid black;
+}
+
+#mineral
+{	
+    line-height: 1;
+	position: relative;
+	left: 180px;
+	top: 523px;
+	height: 80px;
+	width: 100px;
+	background: rgb(0, 0, 0); /* fallback color */
+   	background: rgba(0, 0, 0, 0.1);
+   	border: 1px solid black;
+}
+#esmerelda
+{
+    line-height: 1;
+	position: relative;
+	left: 280px;
+	top: 623px;
+	height: 80px;
+	width: 100px;
+	background: rgb(0, 0, 0); /* fallback color */
+   	background: rgba(0, 0, 0, 0.1);
+   	border: 1px solid black;
+}
+#clark
+{
+    line-height: 1;
+	position: relative;
+	left: 490px;
+	top: 610px;
+	height: 80px;
+	width: 100px;
+	background: rgba(255, 255, 255, 0.3); /* fallback color */
+}
+#nye
+{
+    line-height: 1;
+	position: relative;
+	left: 380px;
+	top: 405px;
+	height: 80px;
+	width: 100px;
+	background: rgba(255, 255, 255, 0.3); /* fallback color */
+}
+#lincoln
+{
+    line-height: 1;
+	position: relative;
+	left: 510px;
+	top: 500px;
+	height: 80px;
+	width: 100px;
+	background: rgba(255, 255, 255, 0.3); /* fallback color */
+}
+#lincoln
+{
+    line-height: 1;
+	position: relative;
+	left: 500px;
+	top: 505px;
+	height: 80px;
+	width: 100px;
+	background: rgba(255, 255, 255, 0.3); /* fallback color */
+}
+#whitepine
+{
+    line-height: 1;
+	position: relative;
+	left: 500px;
+	top: 310px;
+	height: 80px;
+	width: 100px;
+	background: rgba(255, 255, 255, 0.3); /* fallback color */
+}
+#elko
+{
+    line-height: 1;
+	position: relative;
+	left: 470px;
+	top: 160px;
+	height: 80px;
+	width: 100px;
+	background: rgba(255, 255, 255, 0.3); /* fallback color */
+}
+#humboldt
+{
+    line-height: 1;
+	position: relative;
+	left: 250px;
+	top: 125px;
+	height: 80px;
+	width: 100px;
+	background: rgba(255, 255, 255, 0.3); /* fallback color */
+}
+#pershing
+{
+    line-height: 1;
+	position: relative;
+	left: 240px;
+	top: 223px;
+	height: 80px;
+	width: 100px;
+	background: rgba(255, 255, 255, 0.3); /* fallback color */
+}
+#churchill
+{   
+    line-height: 1;
+	position: relative;
+	left: 242px;
+	top: 308px;
+	height: 80px;
+	width: 100px;
+	background: rgba(255, 255, 255, 0.3); /* fallback color */
+}

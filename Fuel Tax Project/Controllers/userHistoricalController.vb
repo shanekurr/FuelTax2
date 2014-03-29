@@ -23,6 +23,9 @@ Namespace Fuel_Tax_Project
             Dim List As New List(Of SelectListItem)
             List.Add(New SelectListItem With {.Text = "DMV Statistical Reports", .Value = "DMV"})
             List.Add(New SelectListItem With {.Text = "FHWA 551M Reports", .Value = "FHWA"})
+            List.Add(New SelectListItem With {.Text = "Annual Fiscal Reports", .Value = "FYR"})
+            List.Add(New SelectListItem With {.Text = "Annual Gasgal Reports", .Value = "GAS"})
+            List.Add(New SelectListItem With {.Text = "Monthly Fuel Consumption Reports", .Value = "NEW"})
 
 
             Dim MonthsList As New List(Of SelectListItem)

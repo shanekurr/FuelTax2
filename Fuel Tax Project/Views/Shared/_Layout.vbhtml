@@ -9,7 +9,7 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @Styles.Render("~/Content/Plugins/JQplot/CSS")
-
+    @Styles.Render("~/Content/map")
 
     @Scripts.Render("~/Content/Plugins/JQplot/JS")
     @Scripts.Render("~/Content/Plugins/highchart")
@@ -70,8 +70,12 @@
                                     <li>@Html.ActionLink("Total Revenue", "Index", "userNSRTotalRevenue")</li>
                                 </ul>
                             </li>
-
-                            <li>@Html.ActionLink("Historical Reports", "Index", "userHistorical")</li>
+                            <li class="dropdown">
+                                <a href="#" data-toggle="dropdown" id="dropdownMenu4" class="dropdown-toggle">Historical Data</a>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu4">
+                                    <li>@Html.ActionLink("Historical Reports", "Index", "userHistorical")</li>
+                                    <li>@Html.ActionLink("Add File to Database", "Index", "userAddFile")</li>
+                                </ul>
                             <li class="dropdown">
                                 <a href="#" data-toggle="dropdown" id="dropdownMenu4" class="dropdown-toggle">Projections</a>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu4">
@@ -79,20 +83,8 @@
                                     <li>@Html.ActionLink("Custom Scenarios", "Index", "userCustomScenario")</li>
                                 </ul>
                             </li>
-                            @If Request.IsAuthenticated Then
-                            @<li class="dropdown">
-                                <a href="#" data-toggle="dropdown" id="dropdownMenu5" class="dropdown-toggle">Upload/Create Report</a>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu5">
-                                    <li>@Html.ActionLink("Create Report", "Index", "userCreateReport")</li>
-                                    <li>@Html.ActionLink("Add File To Database", "Index", "userAddFile")</li>
-                                </ul>
-                            </li>
-                            @<li>@Html.ActionLink("Register New User", "Register", "Account", routeValues:=Nothing, htmlAttributes:=New With {.id = "registerLink"})</li>
-
-                            End If
-                                
-
-                         </ul>
+                            <li>@Html.ActionLink("Create Report", "Index", "userCreateReport")</li>
+                        </ul>
                     </div>
                 </div>
             </div>

@@ -22,6 +22,8 @@ Public Module BundleConfig
                   "~/Content/bootstrap.css",
                   "~/Content/site.css",
                   "~/Content/bootstrap-responsive.css"))
+        bundles.Add(New StyleBundle("~/Content/map").Include(
+                    "~/Content/mapstyle.css"))
 
         ' jqplot bundle
 
